@@ -1,0 +1,32 @@
+{
+  "name": "@ribble-ui/react",
+  "version": "0.1.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "build:watch": "rollup -c -w",
+    "analyze": "rollup -c && open dist/bundle-analysis.html",
+    "test": "pnpm --filter @ui-kit/testing test"
+  },
+  "dependencies": {
+    "@ui-kit/core": "workspace:*",
+    "react": "^18.0.0",
+    "@types/react": "^18.0.0"
+  },
+  "devDependencies": {
+    "rollup": "^2.0.0",
+    "typescript": "^5.0.0"
+  },
+  "files": [
+    "dist"
+  ],
+  "license": "MIT"
+}

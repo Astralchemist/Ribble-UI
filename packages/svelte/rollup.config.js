@@ -1,0 +1,10 @@
+import createConfig from '@ui-kit/configs/rollup.config.js';
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const pkg = require('./package.json');
+
+export default createConfig({
+  input: 'src/index.ts',
+  outDir: 'dist',
+  name: 'UIKITSvelte',
+  tsconfig: './tsconfig.json',
+});

@@ -1,0 +1,79 @@
+// Palette tokens
+$palette-blue-600: #2563eb;
+$palette-purple-500: #a21caf;
+$palette-green-500: #22c55e;
+$palette-yellow-500: #eab308;
+$palette-red-600: #dc2626;
+$palette-gray-500: #64748b;
+[data-theme='dark'] & {
+  $palette-blue-600: #3b82f6;
+  $palette-purple-500: #c026d3;
+  $palette-green-500: #4ade80;
+  $palette-yellow-500: #facc15;
+  $palette-red-600: #f87171;
+  $palette-gray-500: #94a3b8;
+}
+// Semantic tokens
+$color-primary: $palette-blue-600;
+$color-secondary: $palette-purple-500;
+$color-success: $palette-green-500;
+$color-warning: $palette-yellow-500;
+$color-error: $palette-red-600;
+$color-neutral: $palette-gray-500;
+// Typography
+$font-family-sans: 'Inter', Arial, sans-serif;
+$font-family-mono: 'Fira Mono', monospace;
+$font-size-xs: clamp(0.75rem, 0.7rem + 0.2vw, 0.8rem);
+$font-size-sm: clamp(0.875rem, 0.8rem + 0.3vw, 1rem);
+$font-size-md: clamp(1rem, 0.95rem + 0.4vw, 1.25rem);
+$font-size-lg: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem);
+$font-size-xl: clamp(1.5rem, 1.3rem + 0.7vw, 2rem);
+$line-height-tight: 1.2;
+$line-height-normal: 1.5;
+$line-height-loose: 1.75;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+// Spacing
+$spacing-0: 0px;
+$spacing-1: 4px;
+$spacing-2: 8px;
+$spacing-3: 16px;
+$spacing-4: 24px;
+$spacing-5: 32px;
+$spacing-6: 40px;
+$spacing-7: 48px;
+$spacing-8: 64px;
+// Radius
+$radius-none: 0px;
+$radius-sm: 2px;
+$radius-md: 4px;
+$radius-lg: 8px;
+$radius-xl: 16px;
+$radius-full: 9999px;
+// Shadow
+$shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+$shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+// Animation
+$animation-duration-fast: 150ms;
+$animation-duration-normal: 300ms;
+$animation-duration-slow: 500ms;
+$animation-easing-in: cubic-bezier(0.4, 0, 1, 1);
+$animation-easing-out: cubic-bezier(0, 0, 0.2, 1);
+$animation-easing-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+// Breakpoints
+$breakpoint-xs: 320px;
+$breakpoint-sm: 480px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+// Z-Index
+$z-index-base: 0;
+$z-index-dropdown: 1000;
+$z-index-sticky: 1100;
+$z-index-modal: 1200;
+$z-index-popover: 1300;
+$z-index-tooltip: 1400;
+// ...other tokens

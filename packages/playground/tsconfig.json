@@ -1,0 +1,21 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@ui-kit/react": ["../../react/src"],
+      "@ui-kit/core": ["../../core/src"],
+      "@ui-kit/vue": ["../../vue/src"],
+      "@ui-kit/svelte": ["../../svelte/src"],
+      "@ui-kit/angular": ["../../angular/src"]
+    }
+  },
+  "include": [
+    "src/**/*",
+    "../../react/src/**/*",
+    "../../core/src/**/*",
+    "../../vue/src/**/*",
+    "../../svelte/src/**/*",
+    "../../angular/src/**/*"
+  ]
+}

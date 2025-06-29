@@ -1,0 +1,23 @@
+{
+  "fontFamily": {
+    "sans": "'Inter', Arial, sans-serif",
+    "mono": "'Fira Mono', monospace"
+  },
+  "fontSize": {
+    "xs": "clamp(0.75rem, 0.7rem + 0.2vw, 0.8rem)",
+    "sm": "clamp(0.875rem, 0.8rem + 0.3vw, 1rem)",
+    "md": "clamp(1rem, 0.95rem + 0.4vw, 1.25rem)",
+    "lg": "clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem)",
+    "xl": "clamp(1.5rem, 1.3rem + 0.7vw, 2rem)"
+  },
+  "lineHeight": {
+    "tight": 1.2,
+    "normal": 1.5,
+    "loose": 1.75
+  },
+  "fontWeight": {
+    "regular": 400,
+    "medium": 500,
+    "bold": 700
+  }
+}

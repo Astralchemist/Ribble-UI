@@ -1,0 +1,8 @@
+{
+  "primary": "{color.blue.600}",
+  "secondary": "{color.purple.500}",
+  "success": "{color.green.500}",
+  "warning": "{color.yellow.500}",
+  "error": "{color.red.600}",
+  "neutral": "{color.gray.500}"
+}

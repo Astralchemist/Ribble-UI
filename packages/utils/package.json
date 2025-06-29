@@ -1,0 +1,30 @@
+{
+  "name": "@ribble-ui/utils",
+  "version": "0.1.0",
+  "description": "Framework-agnostic utility library for Web Components and UI development.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "lint": "eslint src --ext .ts,.js",
+    "test": "echo 'No tests yet'"
+  },
+  "keywords": [
+    "utils",
+    "web-components",
+    "ui-kit",
+    "framework-agnostic"
+  ],
+  "author": "UI Kit Contributors",
+  "license": "MIT"
+}
