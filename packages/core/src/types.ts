@@ -40,6 +40,7 @@ export interface ZIndexTokens {
 }
 
 // TypeScript decorators for property binding and validation
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import type { Constructor } from './components/UIComponent';
 
 export interface PropertyOptions {
@@ -67,6 +68,16 @@ export function property(options: PropertyOptions = {}) {
   };
 }
 
-export function validate(target: any, key: string, descriptor: PropertyDescriptor) {
+export function validate(_target: any, _key: string, _descriptor: PropertyDescriptor) {
   // Decorator for validation logic (to be extended)
 }
+
+// Todo types
+export interface Todo {
+  id: string;
+  text: string;
+  completed: boolean;
+  createdAt: number;
+}
+
+export type TodoFilter = 'all' | 'active' | 'completed';
