@@ -1,1 +1,7 @@
-{ 'packages': ['packages/*', 'docs', '!**/dist'] }
+packages:
+  - 'packages/*'
+  - 'apps/*'
+  - 'templates/*'
+  - 'docs'
+  - '!**/dist'
+  - '!**/node_modules'

@@ -5,7 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "pnpm -r --filter './packages/**' build",
+    "build:apps": "pnpm -r --filter './apps/**' build",
+    "build:templates": "pnpm -r --filter './templates/**' build",
+    "build:all": "pnpm run build && pnpm run build:apps && pnpm run build:templates",
     "preview": "vite preview",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx --max-warnings 0",
     "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",

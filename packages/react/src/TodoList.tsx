@@ -2,10 +2,10 @@ import React, { useRef, useEffect } from 'react';
 import { useWebComponentEvent } from './useWebComponentEvent';
 
 // Import types from core package
-import type { Todo, TodoFilter } from '../../core/src/types';
+import type { Todo, TodoFilter } from '@ribble-ui/core';
 
 // Import the Web Component
-import '../../core/src/components/TodoList';
+import '@ribble-ui/core';
 
 export interface TodoListProps {
   title?: string;

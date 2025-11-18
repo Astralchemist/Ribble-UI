@@ -12,6 +12,7 @@ import filesize from 'rollup-plugin-filesize';
 import replace from '@rollup/plugin-replace';
 import alias from '@rollup/plugin-alias';
 import nodeResolve from '@rollup/plugin-node-resolve';
+import json from '@rollup/plugin-json';
 
 const isProd = process.env.NODE_ENV === 'production';
 
@@ -42,12 +43,22 @@ export default function createConfig({ input, outDir, name, tsconfig = './tsconf
     plugins: [
       peerDepsExternal(),
       nodeResolve({ extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'] }),
+      json(),
       alias({ entries: aliasEntries }),
       replace({
         preventAssignment: true,
         'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
       }),
-      typescript({ tsconfig, declaration: true, declarationDir: outDir, sourceMap: true }),
+      typescript({
+        tsconfig,
+        declaration: true,
+        sourceMap: true,
+        compilerOptions: {
+          declaration: true,
+          declarationDir: './' + outDir,
+          outDir: './' + outDir
+        }
+      }),
       postcss({
         extract: true,
         minimize: isProd,
