@@ -40,8 +40,6 @@ export interface ZIndexTokens {
 }
 
 // TypeScript decorators for property binding and validation
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import type { Constructor } from './components/UIComponent';
 
 export interface PropertyOptions {
   type?: any;

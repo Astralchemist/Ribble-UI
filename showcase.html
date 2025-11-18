@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ribble UI - Component Showcase</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: #f5f7fa;
+      color: #1a1a1a;
+      line-height: 1.6;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .header p {
+      font-size: 1.25rem;
+      opacity: 0.9;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .section {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .section h2 {
+      font-size: 1.75rem;
+      margin-bottom: 1.5rem;
+      color: #007bff;
+      border-bottom: 2px solid #e0e0e0;
+      padding-bottom: 0.5rem;
+    }
+
+    .component-demo {
+      margin: 1.5rem 0;
+      padding: 1.5rem;
+      background: #fafafa;
+      border-radius: 8px;
+      border: 1px solid #e0e0e0;
+    }
+
+    .component-demo h3 {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    .demo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .demo-item {
+      padding: 1rem;
+      background: white;
+      border-radius: 6px;
+      border: 1px solid #e0e0e0;
+    }
+
+    .demo-label {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #6b7280;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .nav-tabs {
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .nav-tabs a {
+      padding: 0.5rem 1rem;
+      background: #f3f4f6;
+      border-radius: 6px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+
+    .nav-tabs a:hover {
+      background: #007bff;
+      color: white;
+    }
+
+    code {
+      background: #f3f4f6;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.875rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>🎨 Ribble UI Showcase</h1>
+    <p>Interactive component library demonstration</p>
+  </div>
+
+  <div class="nav-tabs">
+    <a href="#forms">Forms</a>
+    <a href="#layout">Layout</a>
+    <a href="#feedback">Feedback</a>
+    <a href="#navigation">Navigation</a>
+    <a href="#data">Data Display</a>
+  </div>
+
+  <div class="container">
+    <!-- Form Components -->
+    <section id="forms" class="section">
+      <h2>📝 Form Components</h2>
+
+      <div class="component-demo">
+        <h3>Input</h3>
+        <div class="demo-grid">
+          <div class="demo-item">
+            <span class="demo-label">Default Input</span>
+            <ui-input
+              label="Username"
+              placeholder="Enter your username"
+              helper="Choose a unique username">
+            </ui-input>
+          </div>
+          <div class="demo-item">
+            <span class="demo-label">Email Input</span>
+            <ui-input
+              type="email"
+              label="Email"
+              placeholder="user@example.com"
+              required>
+            </ui-input>
+          </div>
+          <div class="demo-item">
+            <span class="demo-label">Password Input</span>
+            <ui-input
+              type="password"
+              label="Password"
+              placeholder="••••••••"
+              required>
+            </ui-input>
+          </div>
+          <div class="demo-item">
+            <span class="demo-label">With Error</span>
+            <ui-input
+              label="Username"
+              value="ab"
+              error="Username must be at least 3 characters">
+            </ui-input>
+          </div>
+        </div>
+      </div>
+
+      <div class="component-demo">
+        <h3>Checkbox & Radio</h3>
+        <div class="demo-grid">
+          <div class="demo-item">
+            <span class="demo-label">Checkboxes</span>
+            <ui-checkbox label="Accept terms and conditions" checked></ui-checkbox>
+            <ui-checkbox label="Subscribe to newsletter"></ui-checkbox>
+            <ui-checkbox label="Enable notifications"></ui-checkbox>
+          </div>
+          <div class="demo-item">
+            <span class="demo-label">Radio Buttons</span>
+            <ui-radio name="plan" label="Free Plan" value="free" checked></ui-radio>
+            <ui-radio name="plan" label="Pro Plan" value="pro"></ui-radio>
+            <ui-radio name="plan" label="Enterprise Plan" value="enterprise"></ui-radio>
+          </div>
+        </div>
+      </div>
+
+      <div class="component-demo">
+        <h3>Select & Textarea</h3>
+        <div class="demo-grid">
+          <div class="demo-item">
+            <span class="demo-label">Select Dropdown</span>
+            <ui-select label="Country" id="country-select"></ui-select>
+          </div>
+          <div class="demo-item">
+            <span class="demo-label">Textarea</span>
+            <ui-textarea
+              label="Message"
+              placeholder="Enter your message..."
+              rows="4"
+              maxlength="200"
+              helper="Maximum 200 characters">
+            </ui-textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="component-demo">
+        <h3>Switch</h3>
+        <div class="demo-grid">
+          <div class="demo-item">
+            <ui-switch label="Dark Mode" checked></ui-switch>
+            <ui-switch label="Email Notifications"></ui-switch>
+            <ui-switch label="Auto-save" checked></ui-switch>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Layout Components -->
+    <section id="layout" class="section">
+      <h2>📐 Layout Components</h2>
+
+      <div class="component-demo">
+        <h3>Card</h3>
+        <div class="demo-grid">
+          <ui-card title="Simple Card" subtitle="With subtitle">
+            <p>This is a basic card component with a header and content.</p>
+          </ui-card>
+
+          <ui-card title="Hoverable Card" hoverable>
+            <p>Hover over this card to see the effect!</p>
+          </ui-card>
+
+          <ui-card title="Clickable Card" clickable hoverable>
+            <p>This card is clickable and emits events.</p>
+            <div slot="footer">
+              <ui-badge variant="primary">New</ui-badge>
+            </div>
+          </ui-card>
+        </div>
+      </div>
+
+      <div class="component-demo">
+        <h3>Container & Grid</h3>
+        <ui-container grid cols="3" style="margin-bottom: 1rem;">
+          <div style="background: #007bff; color: white; padding: 2rem; border-radius: 8px; text-align: center;">
+            Grid Item 1
+          </div>
+          <div style="background: #0056b3; color: white; padding: 2rem; border-radius: 8px; text-align: center;">
+            Grid Item 2
+          </div>
+          <div style="background: #007bff; color: white; padding: 2rem; border-radius: 8px; text-align: center;">
+            Grid Item 3
+          </div>
+        </ui-container>
+
+        <ui-container flex justify="between" align="center">
+          <div>Flex Container - Space Between</div>
+          <ui-badge variant="success">Aligned</ui-badge>
+        </ui-container>
+      </div>
+
+      <div class="component-demo">
+        <h3>Divider</h3>
+        <p>Content above divider</p>
+        <ui-divider></ui-divider>
+        <p>Content below divider</p>
+        <ui-divider text="OR"></ui-divider>
+        <p>Divider with text</p>
+        <ui-divider dashed text="Section Break"></ui-divider>
+        <p>Dashed divider with text</p>
+      </div>
+    </section>
+
+    <!-- Feedback Components -->
+    <section id="feedback" class="section">
+      <h2>💬 Feedback Components</h2>
+
+      <div class="component-demo">
+        <h3>Alerts</h3>
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+          <ui-alert type="info" title="Information" message="This is an informational message." dismissible></ui-alert>
+          <ui-alert type="success" title="Success!" message="Your changes have been saved successfully." dismissible></ui-alert>
+          <ui-alert type="warning" title="Warning" message="Please review your input before proceeding." dismissible></ui-alert>
+          <ui-alert type="error" title="Error" message="An error occurred while processing your request." dismissible></ui-alert>
+        </div>
+      </div>
+
+      <div class="component-demo">
+        <h3>Progress Bars</h3>
+        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+          <ui-progress value="30" label="Upload Progress" show-value></ui-progress>
+          <ui-progress value="60" label="Processing" show-value striped></ui-progress>
+          <ui-progress value="85" variant="success" show-value animated></ui-progress>
+          <ui-progress value="95" variant="warning" show-value striped animated></ui-progress>
+        </div>
+      </div>
+
+      <div class="component-demo">
+        <h3>Spinners</h3>
+        <div class="demo-grid">
+          <div class="demo-item" style="text-align: center;">
+            <span class="demo-label">Circular</span>
+            <ui-spinner type="circular" label="Loading..."></ui-spinner>
+          </div>
+          <div class="demo-item" style="text-align: center;">
+            <span class="demo-label">Dots</span>
+            <ui-spinner type="dots" label="Please wait..."></ui-spinner>
+          </div>
+          <div class="demo-item" style="text-align: center;">
+            <span class="demo-label">Pulse</span>
+            <ui-spinner type="pulse" size="large"></ui-spinner>
+          </div>
+        </div>
+      </div>
+
+      <div class="component-demo">
+        <h3>Modal</h3>
+        <button onclick="document.getElementById('demo-modal').show()" style="padding: 0.75rem 1.5rem; background: #007bff; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 1rem;">
+          Open Modal
+        </button>
+        <ui-modal id="demo-modal" title="Example Modal" size="medium">
+          <p>This is a modal dialog. It can contain any content you want!</p>
+          <p style="margin-top: 1rem;">Click outside the modal or press the close button to dismiss it.</p>
+          <div slot="footer">
+            <button onclick="document.getElementById('demo-modal').close()" style="padding: 0.5rem 1rem; background: #6c757d; color: white; border: none; border-radius: 4px; cursor: pointer; margin-right: 0.5rem;">Cancel</button>
+            <button onclick="alert('Confirmed!'); document.getElementById('demo-modal').close()" style="padding: 0.5rem 1rem; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer;">Confirm</button>
+          </div>
+        </ui-modal>
+      </div>
+    </section>
+
+    <!-- Navigation Components -->
+    <section id="navigation" class="section">
+      <h2>🧭 Navigation Components</h2>
+
+      <div class="component-demo">
+        <h3>Tabs</h3>
+        <ui-tabs id="demo-tabs"></ui-tabs>
+      </div>
+
+      <div class="component-demo">
+        <h3>Breadcrumbs</h3>
+        <ui-breadcrumbs id="demo-breadcrumbs"></ui-breadcrumbs>
+      </div>
+
+      <div class="component-demo">
+        <h3>Pagination</h3>
+        <ui-pagination current-page="5" total-pages="10" show-info></ui-pagination>
+      </div>
+    </section>
+
+    <!-- Data Display Components -->
+    <section id="data" class="section">
+      <h2>📊 Data Display Components</h2>
+
+      <div class="component-demo">
+        <h3>Badges</h3>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center;">
+          <ui-badge variant="primary" text="Primary"></ui-badge>
+          <ui-badge variant="secondary" text="Secondary"></ui-badge>
+          <ui-badge variant="success" text="Success"></ui-badge>
+          <ui-badge variant="warning" text="Warning"></ui-badge>
+          <ui-badge variant="error" text="Error"></ui-badge>
+          <ui-badge variant="info" text="Info"></ui-badge>
+          <ui-badge variant="primary" outline text="Outline"></ui-badge>
+          <ui-badge variant="success" dot></ui-badge>
+        </div>
+      </div>
+
+      <div class="component-demo">
+        <h3>Avatars</h3>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
+          <ui-avatar initials="JD" size="small"></ui-avatar>
+          <ui-avatar initials="AS" size="medium" status="online"></ui-avatar>
+          <ui-avatar initials="MK" size="large" status="busy"></ui-avatar>
+          <ui-avatar initials="RT" square></ui-avatar>
+          <ui-avatar src="https://via.placeholder.com/150" alt="User" status="away"></ui-avatar>
+        </div>
+      </div>
+
+      <div class="component-demo">
+        <h3>Table</h3>
+        <ui-table id="demo-table" bordered striped hoverable></ui-table>
+      </div>
+
+      <div class="component-demo">
+        <h3>Accordion</h3>
+        <ui-accordion id="demo-accordion"></ui-accordion>
+      </div>
+    </section>
+  </div>
+
+  <!-- Load all components -->
+  <script type="module">
+    // Import all components
+    import './packages/core/src/components/Input.ts';
+    import './packages/core/src/components/Checkbox.ts';
+    import './packages/core/src/components/Radio.ts';
+    import './packages/core/src/components/Select.ts';
+    import './packages/core/src/components/Textarea.ts';
+    import './packages/core/src/components/Switch.ts';
+    import './packages/core/src/components/Card.ts';
+    import './packages/core/src/components/Container.ts';
+    import './packages/core/src/components/Divider.ts';
+    import './packages/core/src/components/Alert.ts';
+    import './packages/core/src/components/Modal.ts';
+    import './packages/core/src/components/Progress.ts';
+    import './packages/core/src/components/Spinner.ts';
+    import './packages/core/src/components/Tabs.ts';
+    import './packages/core/src/components/Breadcrumbs.ts';
+    import './packages/core/src/components/Pagination.ts';
+    import './packages/core/src/components/Badge.ts';
+    import './packages/core/src/components/Avatar.ts';
+    import './packages/core/src/components/Table.ts';
+    import './packages/core/src/components/Accordion.ts';
+
+    // Initialize Select options
+    const countrySelect = document.getElementById('country-select');
+    countrySelect.options = [
+      { value: '', label: 'Select a country...' },
+      { value: 'us', label: 'United States' },
+      { value: 'uk', label: 'United Kingdom' },
+      { value: 'ca', label: 'Canada' },
+      { value: 'au', label: 'Australia' },
+      { value: 'de', label: 'Germany' }
+    ];
+
+    // Initialize Tabs
+    const demoTabs = document.getElementById('demo-tabs');
+    demoTabs.tabs = [
+      { label: 'Profile', content: '<p>User profile information goes here.</p>' },
+      { label: 'Settings', content: '<p>Application settings and preferences.</p>' },
+      { label: 'Activity', content: '<p>Recent activity and history.</p>' }
+    ];
+
+    // Initialize Breadcrumbs
+    const demoBreadcrumbs = document.getElementById('demo-breadcrumbs');
+    demoBreadcrumbs.items = [
+      { label: 'Home', href: '#' },
+      { label: 'Products', href: '#' },
+      { label: 'Electronics', href: '#' },
+      { label: 'Laptops' }
+    ];
+
+    // Initialize Table
+    const demoTable = document.getElementById('demo-table');
+    demoTable.columns = [
+      { key: 'name', label: 'Name', sortable: true },
+      { key: 'email', label: 'Email', sortable: true },
+      { key: 'role', label: 'Role', sortable: true },
+      { key: 'status', label: 'Status', sortable: true }
+    ];
+    demoTable.data = [
+      { name: 'John Doe', email: 'john@example.com', role: 'Admin', status: 'Active' },
+      { name: 'Jane Smith', email: 'jane@example.com', role: 'User', status: 'Active' },
+      { name: 'Bob Johnson', email: 'bob@example.com', role: 'User', status: 'Inactive' },
+      { name: 'Alice Williams', email: 'alice@example.com', role: 'Moderator', status: 'Active' },
+      { name: 'Charlie Brown', email: 'charlie@example.com', role: 'User', status: 'Active' }
+    ];
+
+    // Initialize Accordion
+    const demoAccordion = document.getElementById('demo-accordion');
+    demoAccordion.items = [
+      {
+        title: 'What is Ribble UI?',
+        content: 'Ribble UI is a modern, framework-agnostic UI component library built with Web Components.'
+      },
+      {
+        title: 'How do I install it?',
+        content: 'You can install Ribble UI using npm: <code>npm install @ribble-ui/core</code>'
+      },
+      {
+        title: 'Is it framework agnostic?',
+        content: 'Yes! Ribble UI is built with Web Components, so it works with React, Vue, Angular, Svelte, and vanilla JavaScript.'
+      }
+    ];
+
+    // Smooth scrolling for navigation
+    document.querySelectorAll('.nav-tabs a').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  </script>
+</body>
+</html>
