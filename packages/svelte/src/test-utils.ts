@@ -1,4 +1,4 @@
-import { render, fireEvent } from '@testing-library/svelte';
+import { render } from '@testing-library/svelte';
 
 /**
  * Utility to render a Web Component in Svelte for testing.

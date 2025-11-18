@@ -28,7 +28,7 @@ function isColor(value: string) {
   );
 }
 
-function colorSwatch(value: string) {
+function _colorSwatch(value: string) {
   return `<span style="display:inline-block;width:1.5em;height:1.5em;border:1px solid #ccc;background:${value};vertical-align:middle;margin-right:0.5em;"></span>`;
 }
 

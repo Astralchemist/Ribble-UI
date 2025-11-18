@@ -1,6 +1,6 @@
 /** @jsxImportSource react */
 import React, { forwardRef, useRef, useImperativeHandle, useEffect, useContext } from 'react';
-import { ThemeContext, useTheme } from './ThemeProvider';
+import { ThemeContext } from './ThemeProvider';
 
 // Utility: map React props to Web Component attributes
 function setAttributes(el: HTMLElement, props: Record<string, any>) {
@@ -30,7 +30,7 @@ function addEventListeners(el: HTMLElement, props: Record<string, any>) {
 export function withWebComponent<T extends object = any>(
   tagName: string,
   propNames: string[] = [],
-  eventNames: string[] = [],
+  _eventNames: string[] = [],
 ) {
   type Props = T & React.HTMLAttributes<HTMLElement>;
   const Component = forwardRef<HTMLElement, Props>((props, ref) => {
