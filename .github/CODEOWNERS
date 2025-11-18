@@ -1,0 +1,25 @@
+# Code Owners for Ribble-UI
+
+# Default owners for everything
+* @Astralchemist
+
+# Core components
+/packages/core/ @Astralchemist
+
+# Framework adapters
+/packages/react/ @Astralchemist
+/packages/vue/ @Astralchemist
+/packages/svelte/ @Astralchemist
+/packages/angular/ @Astralchemist
+
+# Design tokens and theming
+/packages/core/src/tokens/ @Astralchemist
+/packages/core/src/themes/ @Astralchemist
+
+# Documentation
+/docs/ @Astralchemist
+*.md @Astralchemist
+
+# CI/CD and infrastructure
+/.github/ @Astralchemist
+*.config.* @Astralchemist

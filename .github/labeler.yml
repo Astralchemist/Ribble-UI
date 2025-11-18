@@ -1,0 +1,41 @@
+# Auto-labeling configuration for PRs
+
+'component: core':
+  - packages/core/src/components/**/*
+
+'component: react':
+  - packages/react/**/*
+
+'component: vue':
+  - packages/vue/**/*
+
+'component: svelte':
+  - packages/svelte/**/*
+
+'component: angular':
+  - packages/angular/**/*
+
+'documentation':
+  - docs/**/*
+  - '**/*.md'
+  - COMPONENTS.md
+
+'testing':
+  - packages/testing/**/*
+  - '**/__tests__/**/*'
+  - '**/*.test.*'
+  - '**/*.spec.*'
+
+'infrastructure':
+  - .github/**/*
+  - '*.config.*'
+  - package.json
+  - pnpm-workspace.yaml
+
+'design tokens':
+  - packages/core/src/tokens/**/*
+  - packages/core/src/themes/**/*
+
+'tooling':
+  - packages/cli/**/*
+  - packages/configs/**/*

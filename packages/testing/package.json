@@ -1,12 +1,28 @@
 {
   "name": "@ribble-ui/testing",
   "version": "0.1.0",
-  "main": "index.js",
-  "types": "index.d.ts",
+  "main": "src/test-utils.ts",
+  "types": "src/test-utils.ts",
+  "exports": {
+    ".": "./src/test-utils.ts",
+    "./setup": "./src/setup.ts"
+  },
   "scripts": {
-    "test": "vitest run"
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "@testing-library/dom": "^10.0.0",
+    "@testing-library/jest-dom": "^6.1.5",
+    "@testing-library/user-event": "^14.5.1"
   },
   "devDependencies": {
+    "@vitest/coverage-v8": "^1.0.0",
+    "@vitest/ui": "^1.0.0",
+    "happy-dom": "^12.10.3",
+    "jsdom": "^23.0.0",
     "vitest": "^1.0.0"
   },
   "license": "MIT"

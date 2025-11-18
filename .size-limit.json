@@ -1,0 +1,52 @@
+[
+  {
+    "name": "@ribble-ui/core (ESM)",
+    "path": "packages/core/dist/index.esm.js",
+    "limit": "50 KB",
+    "gzip": true
+  },
+  {
+    "name": "@ribble-ui/core (CJS)",
+    "path": "packages/core/dist/index.cjs.js",
+    "limit": "55 KB",
+    "gzip": true
+  },
+  {
+    "name": "@ribble-ui/react",
+    "path": "packages/react/dist/index.esm.js",
+    "limit": "15 KB",
+    "gzip": true
+  },
+  {
+    "name": "@ribble-ui/vue",
+    "path": "packages/vue/dist/index.esm.js",
+    "limit": "15 KB",
+    "gzip": true
+  },
+  {
+    "name": "@ribble-ui/svelte",
+    "path": "packages/svelte/dist/index.esm.js",
+    "limit": "15 KB",
+    "gzip": true
+  },
+  {
+    "name": "@ribble-ui/utils",
+    "path": "packages/utils/dist/index.esm.js",
+    "limit": "20 KB",
+    "gzip": true
+  },
+  {
+    "name": "Single component import (Button)",
+    "path": "packages/core/dist/components/Button/Button.js",
+    "import": "{ Button }",
+    "limit": "3 KB",
+    "gzip": true
+  },
+  {
+    "name": "Single component import (Input)",
+    "path": "packages/core/dist/components/Input/Input.js",
+    "import": "{ Input }",
+    "limit": "4 KB",
+    "gzip": true
+  }
+]
