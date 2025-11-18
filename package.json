@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "pnpm --filter @ribble-ui/landing-page dev",
     "build": "pnpm -r --filter './packages/**' build",
     "build:apps": "pnpm -r --filter './apps/**' build",
     "build:templates": "pnpm -r --filter './templates/**' build",
