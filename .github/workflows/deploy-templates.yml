@@ -1,0 +1,110 @@
+name: Deploy Templates
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'templates/**'
+      - 'packages/core/**'
+      - 'packages/react/**'
+  workflow_dispatch:
+
+jobs:
+  deploy-admin-panel:
+    name: Deploy Admin Panel
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build admin panel
+        run: pnpm --filter ribble-ui-admin-panel build
+
+      - name: Deploy to Vercel
+        uses: amondnet/vercel-action@v25
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_ADMIN_PANEL_PROJECT_ID }}
+          working-directory: ./templates/admin-panel
+          vercel-args: '--prod'
+
+  deploy-analytics-dashboard:
+    name: Deploy Analytics Dashboard
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build analytics dashboard
+        run: pnpm --filter analytics-dashboard build
+
+      - name: Deploy to Vercel
+        uses: amondnet/vercel-action@v25
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_ANALYTICS_PROJECT_ID }}
+          working-directory: ./templates/analytics-dashboard
+          vercel-args: '--prod'
+
+  deploy-saas-dashboard:
+    name: Deploy SaaS Dashboard
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build SaaS dashboard
+        run: pnpm --filter ribble-ui-saas-dashboard build
+
+      - name: Deploy to Vercel
+        uses: amondnet/vercel-action@v25
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_SAAS_PROJECT_ID }}
+          working-directory: ./templates/saas-dashboard
+          vercel-args: '--prod'

@@ -35,12 +35,12 @@ export async function benchmark(
   }
 
   // Force garbage collection if available
-  if (global.gc) {
-    global.gc();
+  if (typeof globalThis !== 'undefined' && (globalThis as any).gc) {
+    (globalThis as any).gc();
   }
 
   // Measure memory before
-  const memBefore = performance.memory?.usedJSHeapSize;
+  const memBefore = (performance as any).memory?.usedJSHeapSize;
 
   // Run benchmark
   const startTime = performance.now();
@@ -53,7 +53,7 @@ export async function benchmark(
   const duration = endTime - startTime;
 
   // Measure memory after
-  const memAfter = performance.memory?.usedJSHeapSize;
+  const memAfter = (performance as any).memory?.usedJSHeapSize;
   const memory = memAfter && memBefore ? memAfter - memBefore : undefined;
 
   const opsPerSecond = (iterations / duration) * 1000;

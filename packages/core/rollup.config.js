@@ -1,4 +1,4 @@
-import createConfig from '@ui-kit/configs/rollup.config.js';
+import createConfig from '@ribble-ui/configs/rollup.config.js';
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const pkg = require('./package.json');
 
