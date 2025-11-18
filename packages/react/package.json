@@ -14,10 +14,10 @@
     "build": "rollup -c",
     "build:watch": "rollup -c -w",
     "analyze": "rollup -c && open dist/bundle-analysis.html",
-    "test": "pnpm --filter @ui-kit/testing test"
+    "test": "pnpm --filter @ribble-ui/testing test"
   },
   "dependencies": {
-    "@ui-kit/core": "workspace:*",
+    "@ribble-ui/core": "workspace:*",
     "react": "^18.0.0",
     "@types/react": "^18.0.0"
   },
