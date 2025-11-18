@@ -10,3 +10,4 @@ import zIndex from './tokens/z-index.json';
 
 export { color, typography, spacing, radius, shadow, animation, breakpoint, zIndex };
 export * from './components';
+export * from './themes';
