@@ -141,7 +141,7 @@ const FrameworkComparison = () => {
                         </motion.div>
                       </td>
                     ))}
-                  </tr>
+                  </motion.tr>
                 ))}
               </tbody>
             </table>
