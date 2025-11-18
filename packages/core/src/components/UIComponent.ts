@@ -2,7 +2,7 @@
 // Provides lifecycle, props, events, ARIA, focus, slots, and more
 import type { PropertyOptions } from '../types';
 
-export type Constructor<T = {}> = new (...args: any[]) => T;
+export type Constructor<T = object> = new (...args: any[]) => T;
 
 export interface UIComponentOptions {
   shadow?: ShadowRootInit;

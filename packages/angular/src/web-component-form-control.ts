@@ -32,5 +32,5 @@ export class WebComponentFormControlDirective implements ControlValueAccessor {
   registerOnTouched(fn: any) {
     this.onTouched = fn;
   }
-  setDisabledState?(isDisabled: boolean) {}
+  setDisabledState?(_isDisabled: boolean) {}
 }

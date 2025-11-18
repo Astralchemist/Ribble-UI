@@ -4,10 +4,6 @@ import {
   ref,
   watch,
   onMounted,
-  onBeforeUnmount,
-  toRefs,
-  getCurrentInstance,
-  nextTick,
 } from 'vue';
 
 /**
@@ -16,7 +12,7 @@ import {
  * @param propDefs - Prop definitions (for defineProps)
  * @param emits - Event names (for defineEmits)
  */
-export function withWebComponent<T extends Record<string, any> = any>(
+export function withWebComponent<_T extends Record<string, any> = any>(
   tagName: string,
   propDefs: Record<string, any> = {},
   emits: string[] = [],
@@ -27,7 +23,6 @@ export function withWebComponent<T extends Record<string, any> = any>(
     emits,
     setup(props, { emit, slots, attrs, expose }) {
       const elRef = ref<HTMLElement | null>(null);
-      const instance = getCurrentInstance();
 
       // v-model support
       if ('modelValue' in props && emits.includes('update:modelValue')) {

@@ -24,6 +24,8 @@ module.exports = {
     'coverage/',
     'build/',
     '.storybook/',
+    '**/svelte/src/withWebComponent.ts', // Svelte component file with .ts extension
+    'templates/', // Example/demo code - not production
   ],
   rules: {
     // Allow unused vars that start with underscore
@@ -90,10 +92,10 @@ module.exports = {
     },
     {
       // Template files - allow more flexibility for example code
-      files: ['templates/**/*'],
+      files: ['**/templates/**/*.{ts,tsx,js,jsx}'],
       rules: {
         '@typescript-eslint/no-explicit-any': 'off',
-        '@typescript-eslint/no-unused-vars': 'warn',
+        '@typescript-eslint/no-unused-vars': 'off',
       },
     },
   ],

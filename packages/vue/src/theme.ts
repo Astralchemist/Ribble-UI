@@ -1,6 +1,6 @@
 // Vue provide/inject composable for runtime theme switching.
-import { inject, provide, reactive, readonly } from 'vue';
-import { ThemeContextManager, ThemeContextValue } from '@ui-kit/core/src/themes/themeContext';
+import { inject, provide, reactive } from 'vue';
+import { ThemeContextManager } from '@ui-kit/core/src/themes/themeContext';
 import { injectThemeTransition } from '@ui-kit/core/src/themes/globalStyles';
 
 const THEME_KEY = Symbol('ThemeContext');

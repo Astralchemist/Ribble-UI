@@ -1,6 +1,6 @@
 // React ThemeProvider, context, and hook for runtime theme switching.
 
-import React, { createContext, useContext, useState, useMemo, useCallback, useEffect } from 'react';
+import React, { createContext, useContext, useState, useMemo, useEffect } from 'react';
 import { ThemeContextManager, ThemeContextValue } from '@ui-kit/core/src/themes/themeContext';
 import { injectThemeTransition } from '@ui-kit/core/src/themes/globalStyles';
 

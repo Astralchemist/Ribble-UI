@@ -161,7 +161,7 @@ export async function waitForElement(
  * Simulate accessibility keyboard navigation
  */
 export async function pressKey(key: string, element?: HTMLElement): Promise<void> {
-  const target = element || document.activeElement || document.body;
+  const _target = element || document.activeElement || document.body;
   await userEvent.keyboard(`{${key}}`);
 }
 

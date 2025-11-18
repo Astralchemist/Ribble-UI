@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Check, X } from 'lucide-react';
+import { Check } from 'lucide-react';
 
 const FrameworkComparison = () => {
   const [ref, inView] = useInView({
