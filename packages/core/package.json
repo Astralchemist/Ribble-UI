@@ -6,7 +6,7 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "vite",
-    "test": "pnpm --filter @ui-kit/testing test",
+    "test": "pnpm --filter @ribble-ui/testing test",
     "build:watch": "rollup -c -w",
     "analyze": "rollup -c && open dist/bundle-analysis.html"
   },
