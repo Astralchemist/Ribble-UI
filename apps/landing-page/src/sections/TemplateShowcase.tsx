@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { LayoutDashboard, ShoppingCart, BarChart3, ExternalLink, Terminal, Palette } from 'lucide-react';
+import { LayoutDashboard, BarChart3, Terminal, Palette } from 'lucide-react';
 
 const TemplateShowcase = () => {
   const [ref, inView] = useInView({
