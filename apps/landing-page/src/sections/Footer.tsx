@@ -47,19 +47,19 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
+    <footer className="bg-black border-t border-gray-800">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Main Footer Content */}
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 mb-12">
           {/* Brand */}
           <div className="col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-600 to-accent-600 flex items-center justify-center">
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center">
                 <span className="text-white font-bold text-lg">R</span>
               </div>
-              <span className="text-xl font-bold gradient-text">Ribble UI</span>
+              <span className="text-xl font-bold text-white">Ribble UI</span>
             </div>
-            <p className="text-gray-600 dark:text-gray-400 mb-6 max-w-xs">
+            <p className="text-gray-400 mb-6 max-w-xs">
               A modern, framework-agnostic UI component library for building beautiful, accessible interfaces.
             </p>
             {/* Social Links */}
@@ -70,7 +70,7 @@ const Footer = () => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-lg bg-gray-200 dark:bg-gray-800 flex items-center justify-center hover:bg-gradient-to-br hover:from-primary-600 hover:to-accent-600 hover:text-white transition-all duration-300 transform hover:scale-110"
+                  className="w-10 h-10 rounded-lg bg-gray-800 flex items-center justify-center hover:bg-gradient-to-br hover:from-blue-600 hover:to-purple-600 hover:text-white transition-all duration-300 transform hover:scale-110 text-gray-300"
                   aria-label={social.name}
                 >
                   <social.icon className="w-5 h-5" />
@@ -81,7 +81,7 @@ const Footer = () => {
 
           {/* Product Links */}
           <div>
-            <h4 className="font-bold text-gray-900 dark:text-gray-100 mb-4">
+            <h4 className="font-bold text-white mb-4">
               Product
             </h4>
             <ul className="space-y-2">
@@ -89,7 +89,7 @@ const Footer = () => {
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
+                    className="text-gray-400 hover:text-white transition-colors duration-200"
                   >
                     {link.name}
                   </a>
@@ -100,7 +100,7 @@ const Footer = () => {
 
           {/* Developers Links */}
           <div>
-            <h4 className="font-bold text-gray-900 dark:text-gray-100 mb-4">
+            <h4 className="font-bold text-white mb-4">
               Developers
             </h4>
             <ul className="space-y-2">
@@ -110,7 +110,7 @@ const Footer = () => {
                     href={link.href}
                     target={link.href.startsWith('http') ? '_blank' : '_self'}
                     rel={link.href.startsWith('http') ? 'noopener noreferrer' : ''}
-                    className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
+                    className="text-gray-400 hover:text-white transition-colors duration-200"
                   >
                     {link.name}
                   </a>
@@ -121,7 +121,7 @@ const Footer = () => {
 
           {/* Company Links */}
           <div>
-            <h4 className="font-bold text-gray-900 dark:text-gray-100 mb-4">
+            <h4 className="font-bold text-white mb-4">
               Company
             </h4>
             <ul className="space-y-2">
@@ -129,7 +129,7 @@ const Footer = () => {
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
+                    className="text-gray-400 hover:text-white transition-colors duration-200"
                   >
                     {link.name}
                   </a>
@@ -140,7 +140,7 @@ const Footer = () => {
 
           {/* Legal Links */}
           <div>
-            <h4 className="font-bold text-gray-900 dark:text-gray-100 mb-4">
+            <h4 className="font-bold text-white mb-4">
               Legal
             </h4>
             <ul className="space-y-2">
@@ -148,7 +148,7 @@ const Footer = () => {
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
+                    className="text-gray-400 hover:text-white transition-colors duration-200"
                   >
                     {link.name}
                   </a>
@@ -159,8 +159,8 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-gray-200 dark:border-gray-800 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-          <p className="text-gray-600 dark:text-gray-400 text-sm flex items-center space-x-1">
+        <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+          <p className="text-gray-400 text-sm flex items-center space-x-1">
             <span>© 2024 Ribble UI. Made with</span>
             <Heart className="w-4 h-4 text-red-500 fill-red-500" />
             <span>by developers, for developers.</span>
@@ -168,19 +168,19 @@ const Footer = () => {
           <div className="flex items-center space-x-6 text-sm">
             <a
               href="#"
-              className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
+              className="text-gray-400 hover:text-white transition-colors duration-200"
             >
               Status
             </a>
             <a
               href="#"
-              className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
+              className="text-gray-400 hover:text-white transition-colors duration-200"
             >
               Sitemap
             </a>
             <a
               href="#"
-              className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
+              className="text-gray-400 hover:text-white transition-colors duration-200"
             >
               RSS
             </a>
