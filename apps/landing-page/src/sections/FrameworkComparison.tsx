@@ -64,7 +64,7 @@ const FrameworkComparison = () => {
             <span className="gradient-text">All Frameworks</span>
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            Use Ribble UI with your favorite framework. Same API, same components, consistent experience.
+            Use KansoUI with your favorite framework. Same API, same components, consistent experience.
           </p>
         </motion.div>
 

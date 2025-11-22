@@ -46,7 +46,7 @@ export default function Login({ onLogin }: LoginProps) {
       <div className="login-container">
         <div className="login-card">
           <div className="login-header">
-            <h1 className="login-logo">Ribble SaaS</h1>
+            <h1 className="login-logo">Kanso SaaS</h1>
             <h2>{isSignup ? 'Create Account' : 'Welcome Back'}</h2>
             <p className="login-subtitle">
               {isSignup
@@ -176,7 +176,7 @@ export default function Login({ onLogin }: LoginProps) {
           <div className="sidebar-content">
             <h2>Build Better Products</h2>
             <p>
-              Join thousands of teams using Ribble SaaS to manage their products,
+              Join thousands of teams using Kanso SaaS to manage their products,
               track analytics, and grow their business.
             </p>
             <div className="feature-list">

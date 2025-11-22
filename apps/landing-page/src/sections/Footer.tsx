@@ -12,7 +12,7 @@ const Footer = () => {
     developers: [
       { name: 'Documentation', href: '#docs' },
       { name: 'API Reference', href: '#' },
-      { name: 'GitHub', href: 'https://github.com/your-org/ribble-ui' },
+      { name: 'GitHub', href: 'https://github.com/your-org/kanso-ui' },
       { name: 'Examples', href: '#demo' },
     ],
     company: [
@@ -33,7 +33,7 @@ const Footer = () => {
     {
       name: 'GitHub',
       icon: Github,
-      href: 'https://github.com/your-org/ribble-ui',
+      href: 'https://github.com/your-org/kanso-ui',
     },
     {
       name: 'Twitter',

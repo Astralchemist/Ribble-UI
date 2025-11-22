@@ -145,7 +145,7 @@ const Navigation = ({ darkMode, setDarkMode }: NavigationProps) => {
             </div>
 
             <a
-              href="https://github.com/your-org/ribble-ui"
+              href="https://github.com/your-org/kanso-ui"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-300 hover:text-white transition-colors duration-200 font-medium"
@@ -159,7 +159,7 @@ const Navigation = ({ darkMode, setDarkMode }: NavigationProps) => {
             {/* GitHub Stars */}
             {stars !== null && (
               <motion.a
-                href="https://github.com/your-org/ribble-ui"
+                href="https://github.com/your-org/kanso-ui"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hidden sm:flex items-center space-x-2 px-3 py-1.5 rounded-lg border border-gray-700 hover:border-gray-500 transition-colors duration-200 bg-gray-900/50"
@@ -255,7 +255,7 @@ const Navigation = ({ darkMode, setDarkMode }: NavigationProps) => {
 
               <div className="border-t border-gray-700 pt-3">
                 <a
-                  href="https://github.com/your-org/ribble-ui"
+                  href="https://github.com/your-org/kanso-ui"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center space-x-2 py-2 text-gray-300 hover:text-white transition-colors font-medium"

@@ -89,7 +89,7 @@ export default function PWAInstallPrompt() {
             </div>
             <div className="flex-1">
               <h3 className="font-semibold mb-1">Update Available</h3>
-              <p className="text-sm opacity-90 mb-3">A new version of Ribble UI is available. Update now for the latest features.</p>
+              <p className="text-sm opacity-90 mb-3">A new version of KansoUI is available. Update now for the latest features.</p>
               <div className="flex gap-2">
                 <button
                   onClick={handleUpdateClick}
@@ -127,7 +127,7 @@ export default function PWAInstallPrompt() {
               </svg>
             </div>
             <div className="flex-1">
-              <h3 className="font-semibold mb-1">Install Ribble UI</h3>
+              <h3 className="font-semibold mb-1">Install KansoUI</h3>
               <p className="text-sm opacity-90 mb-3">Install our app for quick access and offline support.</p>
               <div className="flex gap-2">
                 <button

@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { ThemeTokens, defaultTheme } from '../utils/presets';
 
-const STORAGE_KEY = 'ribble-ui-theme-tokens';
+const STORAGE_KEY = 'kanso-ui-theme-tokens';
 
 export const useTokens = () => {
   const [tokens, setTokens] = useState<ThemeTokens>(() => {

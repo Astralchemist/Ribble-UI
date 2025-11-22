@@ -24,13 +24,13 @@ const CodeExamples = () => {
 
   const codeExamples = {
     react: {
-      install: 'npm install @ribble-ui/react',
-      usage: `import { Button, Card, Input } from '@ribble-ui/react';
+      install: 'npm install @kanso-ui/react',
+      usage: `import { Button, Card, Input } from '@kanso-ui/react';
 
 function App() {
   return (
     <Card>
-      <h2>Welcome to Ribble UI</h2>
+      <h2>Welcome to KansoUI</h2>
       <Input placeholder="Enter your email" />
       <Button variant="primary">
         Get Started
@@ -40,10 +40,10 @@ function App() {
 }`,
     },
     vue: {
-      install: 'npm install @ribble-ui/vue',
+      install: 'npm install @kanso-ui/vue',
       usage: `<template>
   <Card>
-    <h2>Welcome to Ribble UI</h2>
+    <h2>Welcome to KansoUI</h2>
     <Input placeholder="Enter your email" />
     <Button variant="primary">
       Get Started
@@ -52,17 +52,17 @@ function App() {
 </template>
 
 <script setup>
-import { Button, Card, Input } from '@ribble-ui/vue';
+import { Button, Card, Input } from '@kanso-ui/vue';
 </script>`,
     },
     svelte: {
-      install: 'npm install @ribble-ui/svelte',
+      install: 'npm install @kanso-ui/svelte',
       usage: `<script>
-  import { Button, Card, Input } from '@ribble-ui/svelte';
+  import { Button, Card, Input } from '@kanso-ui/svelte';
 </script>
 
 <Card>
-  <h2>Welcome to Ribble UI</h2>
+  <h2>Welcome to KansoUI</h2>
   <Input placeholder="Enter your email" />
   <Button variant="primary">
     Get Started
@@ -70,14 +70,14 @@ import { Button, Card, Input } from '@ribble-ui/vue';
 </Card>`,
     },
     angular: {
-      install: 'npm install @ribble-ui/angular',
-      usage: `import { RibbleUIModule } from '@ribble-ui/angular';
+      install: 'npm install @kanso-ui/angular',
+      usage: `import { KansoUIModule } from '@kanso-ui/angular';
 
 @Component({
   selector: 'app-root',
   template: \`
     <ribble-card>
-      <h2>Welcome to Ribble UI</h2>
+      <h2>Welcome to KansoUI</h2>
       <ribble-input placeholder="Enter your email"></ribble-input>
       <ribble-button variant="primary">
         Get Started
@@ -88,13 +88,13 @@ import { Button, Card, Input } from '@ribble-ui/vue';
 export class AppComponent {}`,
     },
     html: {
-      install: 'npm install @ribble-ui/core',
+      install: 'npm install @kanso-ui/core',
       usage: `<script type="module">
-  import '@ribble-ui/core';
+  import '@kanso-ui/core';
 </script>
 
 <ribble-card>
-  <h2>Welcome to Ribble UI</h2>
+  <h2>Welcome to KansoUI</h2>
   <ribble-input placeholder="Enter your email"></ribble-input>
   <ribble-button variant="primary">
     Get Started

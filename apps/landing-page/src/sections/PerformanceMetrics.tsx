@@ -88,7 +88,7 @@ const PerformanceMetrics = () => {
 
   const comparisonData = [
     {
-      library: 'Ribble UI',
+      library: 'KansoUI',
       bundleSize: 9.2,
       performance: 100,
       accessibility: 100,

@@ -17,7 +17,7 @@ function PlaygroundApp() {
               </div>
               <div>
                 <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
-                  Ribble UI Playground
+                  KansoUI Playground
                 </h1>
                 <p className="text-sm text-gray-600 dark:text-gray-400">
                   Interactive component showcase - 100+ components
@@ -171,7 +171,7 @@ function PlaygroundApp() {
       <footer className="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 mt-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="text-center text-gray-600 dark:text-gray-400">
-            <p className="mb-2">Built with ❤️ using Ribble UI</p>
+            <p className="mb-2">Built with ❤️ using KansoUI</p>
             <p className="text-sm">
               100+ framework-agnostic Web Components for modern web development
             </p>

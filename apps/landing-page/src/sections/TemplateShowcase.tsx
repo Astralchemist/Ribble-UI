@@ -16,7 +16,7 @@ const TemplateShowcase = () => {
       gradient: 'from-blue-500 to-cyan-500',
       features: ['Auth System', 'User Dashboard', 'Billing Integration', 'Team Management'],
       image: '🎯',
-      command: 'pnpm --filter ribble-ui-saas-dashboard dev',
+      command: 'pnpm --filter kanso-ui-saas-dashboard dev',
     },
     {
       name: 'Admin Panel',
@@ -25,7 +25,7 @@ const TemplateShowcase = () => {
       gradient: 'from-green-500 to-emerald-500',
       features: ['User Management', 'Dashboard Analytics', 'CRUD Operations', 'Settings Panel'],
       image: '⚙️',
-      command: 'pnpm --filter ribble-ui-admin-panel dev',
+      command: 'pnpm --filter kanso-ui-admin-panel dev',
     },
     {
       name: 'Analytics Dashboard',
@@ -46,16 +46,16 @@ const TemplateShowcase = () => {
       gradient: 'from-orange-500 to-red-500',
       features: ['Color Customization', 'Live Preview', 'Export Themes', 'Dark Mode Support'],
       image: '🎨',
-      command: 'pnpm --filter @ribble-ui/theme-builder dev',
+      command: 'pnpm --filter @kanso-ui/theme-builder dev',
     },
     {
       name: 'Component Playground',
-      description: 'Interactive playground to explore and test Ribble UI components in real-time.',
+      description: 'Interactive playground to explore and test KansoUI components in real-time.',
       icon: Terminal,
       gradient: 'from-indigo-500 to-purple-500',
       features: ['Component Explorer', 'Live Code Editor', 'Props Testing', 'Copy Code'],
       image: '🎮',
-      command: 'pnpm --filter @ribble-ui/playground dev',
+      command: 'pnpm --filter @kanso-ui/playground dev',
     },
   ];
 

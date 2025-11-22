@@ -55,7 +55,7 @@ const Hero = () => {
                 className="inline-block"
               >
                 <span className="text-sm text-gray-400 border border-gray-800 rounded-full px-4 py-2">
-                  Introducing Ribble UI
+                  Introducing KansoUI
                 </span>
               </motion.div>
 
@@ -159,7 +159,7 @@ const Hero = () => {
                     Beautify your website within minutes
                   </h3>
                   <p className="text-gray-400 text-lg leading-relaxed">
-                    With Ribble UI, you can build great looking websites within minutes.
+                    With KansoUI, you can build great looking websites within minutes.
                   </p>
 
                   {/* Decorative Elements */}

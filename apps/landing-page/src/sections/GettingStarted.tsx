@@ -24,7 +24,7 @@ const GettingStarted = () => {
       description: 'Choose your framework and install the package via npm, yarn, or pnpm.',
       icon: Download,
       color: 'from-blue-500 to-cyan-500',
-      code: 'npm install @ribble-ui/react',
+      code: 'npm install @kanso-ui/react',
     },
     {
       number: '02',
@@ -32,7 +32,7 @@ const GettingStarted = () => {
       description: 'Import the components you need into your application.',
       icon: Code2,
       color: 'from-purple-500 to-pink-500',
-      code: "import { Button } from '@ribble-ui/react';",
+      code: "import { Button } from '@kanso-ui/react';",
     },
     {
       number: '03',
@@ -64,7 +64,7 @@ const GettingStarted = () => {
       title: 'GitHub Repository',
       description: 'Source code, issues, and contribution guidelines.',
       icon: Github,
-      link: 'https://github.com/your-org/ribble-ui',
+      link: 'https://github.com/your-org/kanso-ui',
       color: 'from-gray-500 to-gray-700',
     },
     {
@@ -191,7 +191,7 @@ const GettingStarted = () => {
         >
           <div className="inline-flex flex-col sm:flex-row gap-4">
             <a
-              href="https://github.com/your-org/ribble-ui"
+              href="https://github.com/your-org/kanso-ui"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary flex items-center space-x-2"

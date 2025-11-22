@@ -127,7 +127,7 @@ export const PresetThemes: React.FC<PresetThemesProps> = ({
             overall feel
           </li>
           <li>
-            The Default theme matches Ribble UI's default styling - use it as a reference
+            The Default theme matches KansoUI's default styling - use it as a reference
           </li>
           <li>
             Dark Mode preset is optimized for low-light environments with appropriate

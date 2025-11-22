@@ -28,7 +28,7 @@ function App() {
       <header className="app-header">
         <div className="app-header-content">
           <div className="app-title">
-            <h1>Ribble UI Theme Builder</h1>
+            <h1>KansoUI Theme Builder</h1>
             <p>Create and customize your design system</p>
           </div>
           <button className="reset-button" onClick={resetTheme} title="Reset to default theme">
@@ -103,7 +103,7 @@ function App() {
 
       <footer className="app-footer">
         <p>
-          Built with Ribble UI &middot; Theme changes are automatically saved to local
+          Built with KansoUI &middot; Theme changes are automatically saved to local
           storage
         </p>
       </footer>

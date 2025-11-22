@@ -61,8 +61,8 @@ export const ExportPanel: React.FC<ExportPanelProps> = ({ tokens, onImport }) =>
     const extension = getFileExtension(selectedFormat);
     const filename =
       selectedFormat === 'figma'
-        ? 'ribble-ui-tokens.figma.json'
-        : `ribble-ui-theme.${extension}`;
+        ? 'kanso-ui-tokens.figma.json'
+        : `kanso-ui-theme.${extension}`;
 
     const blob = new Blob([content], {
       type: 'text/plain;charset=utf-8',
