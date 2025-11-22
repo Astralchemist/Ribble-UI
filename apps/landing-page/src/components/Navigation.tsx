@@ -29,13 +29,18 @@ const Navigation = ({ darkMode, setDarkMode }: NavigationProps) => {
     setStars(247);
   }, []);
 
-  const navLinks = [
-    { name: 'Home', href: '/', type: 'route' },
-    { name: 'Theme Builder', href: '/theme-builder', type: 'route' },
-    { name: 'Playground', href: '/playground', type: 'route' },
-    { name: 'Admin Demo', href: '/admin', type: 'route' },
-    { name: 'Analytics Demo', href: '/analytics', type: 'route' },
-    { name: 'SaaS Demo', href: '/saas', type: 'route' },
+  const [showDemos, setShowDemos] = useState(false);
+  const [showTools, setShowTools] = useState(false);
+
+  const demos = [
+    { name: 'Admin Panel', href: '/admin', icon: '🔐' },
+    { name: 'Analytics Dashboard', href: '/analytics', icon: '📊' },
+    { name: 'SaaS Dashboard', href: '/saas', icon: '🚀' },
+  ];
+
+  const tools = [
+    { name: 'Theme Builder', href: '/theme-builder', icon: '🎨' },
+    { name: 'Component Playground', href: '/playground', icon: '⚡' },
   ];
 
   return (
@@ -57,18 +62,96 @@ const Navigation = ({ darkMode, setDarkMode }: NavigationProps) => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                to={link.href}
-                className={`text-gray-300 hover:text-white transition-colors duration-200 font-medium ${
-                  location.pathname === link.href ? 'text-white border-b-2 border-blue-500' : ''
-                }`}
-              >
-                {link.name}
-              </Link>
-            ))}
+          <div className="hidden md:flex items-center space-x-6">
+            <Link
+              to="/"
+              className={`text-gray-300 hover:text-white transition-colors duration-200 font-medium ${
+                location.pathname === '/' ? 'text-white' : ''
+              }`}
+            >
+              Home
+            </Link>
+
+            {/* Tools Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setShowTools(true)}
+              onMouseLeave={() => setShowTools(false)}
+            >
+              <button className="text-gray-300 hover:text-white transition-colors duration-200 font-medium flex items-center space-x-1">
+                <span>Tools</span>
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+
+              <AnimatePresence>
+                {showTools && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    className="absolute top-full left-0 mt-2 w-56 bg-gray-900 border border-gray-700 rounded-lg shadow-xl overflow-hidden"
+                  >
+                    {tools.map((tool) => (
+                      <Link
+                        key={tool.href}
+                        to={tool.href}
+                        className="flex items-center space-x-3 px-4 py-3 hover:bg-gray-800 transition-colors"
+                      >
+                        <span className="text-2xl">{tool.icon}</span>
+                        <span className="text-gray-300 hover:text-white">{tool.name}</span>
+                      </Link>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
+            {/* Demos Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setShowDemos(true)}
+              onMouseLeave={() => setShowDemos(false)}
+            >
+              <button className="text-gray-300 hover:text-white transition-colors duration-200 font-medium flex items-center space-x-1">
+                <span>Demos</span>
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+
+              <AnimatePresence>
+                {showDemos && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    className="absolute top-full left-0 mt-2 w-56 bg-gray-900 border border-gray-700 rounded-lg shadow-xl overflow-hidden"
+                  >
+                    {demos.map((demo) => (
+                      <Link
+                        key={demo.href}
+                        to={demo.href}
+                        className="flex items-center space-x-3 px-4 py-3 hover:bg-gray-800 transition-colors"
+                      >
+                        <span className="text-2xl">{demo.icon}</span>
+                        <span className="text-gray-300 hover:text-white">{demo.name}</span>
+                      </Link>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
+            <a
+              href="https://github.com/your-org/ribble-ui"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-300 hover:text-white transition-colors duration-200 font-medium"
+            >
+              Docs
+            </a>
           </div>
 
           {/* Right side actions */}
@@ -130,33 +213,63 @@ const Navigation = ({ darkMode, setDarkMode }: NavigationProps) => {
             className="md:hidden bg-black/90 backdrop-blur-xl border-t border-gray-800"
           >
             <div className="container mx-auto px-4 py-4 space-y-3">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  to={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={`block py-2 text-gray-300 hover:text-white transition-colors duration-200 font-medium ${
-                    location.pathname === link.href ? 'text-white' : ''
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              ))}
-              <a
-                href="https://github.com/your-org/ribble-ui"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center space-x-2 py-2 text-gray-300 hover:text-white transition-colors duration-200 font-medium"
+              <Link
+                to="/"
+                onClick={() => setMobileMenuOpen(false)}
+                className={`block py-2 text-gray-300 hover:text-white transition-colors duration-200 font-medium ${
+                  location.pathname === '/' ? 'text-white' : ''
+                }`}
               >
-                <Github className="w-5 h-5" />
-                <span>GitHub</span>
-                {stars !== null && (
-                  <span className="flex items-center space-x-1">
-                    <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                    <span className="text-sm">{stars}</span>
-                  </span>
-                )}
-              </a>
+                Home
+              </Link>
+
+              <div className="border-t border-gray-700 pt-3">
+                <div className="text-xs text-gray-500 uppercase mb-2">Tools</div>
+                {tools.map((tool) => (
+                  <Link
+                    key={tool.href}
+                    to={tool.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="flex items-center space-x-2 py-2 text-gray-300 hover:text-white transition-colors"
+                  >
+                    <span>{tool.icon}</span>
+                    <span>{tool.name}</span>
+                  </Link>
+                ))}
+              </div>
+
+              <div className="border-t border-gray-700 pt-3">
+                <div className="text-xs text-gray-500 uppercase mb-2">Demos</div>
+                {demos.map((demo) => (
+                  <Link
+                    key={demo.href}
+                    to={demo.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="flex items-center space-x-2 py-2 text-gray-300 hover:text-white transition-colors"
+                  >
+                    <span>{demo.icon}</span>
+                    <span>{demo.name}</span>
+                  </Link>
+                ))}
+              </div>
+
+              <div className="border-t border-gray-700 pt-3">
+                <a
+                  href="https://github.com/your-org/ribble-ui"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-2 py-2 text-gray-300 hover:text-white transition-colors font-medium"
+                >
+                  <Github className="w-5 h-5" />
+                  <span>GitHub</span>
+                  {stars !== null && (
+                    <span className="flex items-center space-x-1">
+                      <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                      <span className="text-sm">{stars}</span>
+                    </span>
+                  )}
+                </a>
+              </div>
             </div>
           </motion.div>
         )}
