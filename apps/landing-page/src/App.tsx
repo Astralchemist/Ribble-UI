@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Navigation from './components/Navigation';
+import PWAInstallPrompt from './components/PWAInstallPrompt';
 import Hero from './sections/Hero';
 import Features from './sections/Features';
 import ComponentDemo from './sections/ComponentDemo';
@@ -43,6 +44,7 @@ function App() {
         <GettingStarted />
       </main>
       <Footer />
+      <PWAInstallPrompt />
     </div>
   );
 }
