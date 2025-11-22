@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Moon, Sun, Menu, X, Github, Star } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import KansoUILogo from './KansoUILogo';
 
 interface NavigationProps {
   darkMode: boolean;
@@ -47,16 +48,12 @@ const Navigation = ({ darkMode, setDarkMode }: NavigationProps) => {
           {/* Logo */}
           <motion.a
             href="#"
-            className="flex items-center space-x-2"
+            className="flex items-center"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center">
-              <span className="text-white font-bold text-lg">R</span>
-            </div>
-            <span className="text-xl font-bold text-white hidden sm:inline">
-              Ribble UI
-            </span>
+            <KansoUILogo showText={false} iconOnly className="w-10 h-10 sm:hidden" />
+            <KansoUILogo showText className="hidden sm:block h-10" width={180} />
           </motion.a>
 
           {/* Desktop Navigation */}

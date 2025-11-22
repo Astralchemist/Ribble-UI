@@ -1,4 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
+import KansoUILogo from './KansoUILogo';
 
 interface SidebarProps {
   isOpen: boolean;
@@ -29,9 +30,14 @@ export default function Sidebar({ isOpen }: SidebarProps) {
   return (
     <aside className={`sidebar ${isOpen ? 'open' : 'closed'}`}>
       <div className="sidebar-header">
-        <h1 className="sidebar-logo">
-          {isOpen ? 'Ribble SaaS' : 'R'}
-        </h1>
+        <div className="sidebar-logo">
+          <KansoUILogo
+            showText={isOpen}
+            iconOnly={!isOpen}
+            size="sm"
+            className="text-white"
+          />
+        </div>
       </div>
 
       <nav className="sidebar-nav">

@@ -1,4 +1,5 @@
 import { Github, Twitter, MessageSquare, Heart } from 'lucide-react';
+import KansoUILogo from '../components/KansoUILogo';
 
 const Footer = () => {
   const footerLinks = {
@@ -53,11 +54,8 @@ const Footer = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 mb-12">
           {/* Brand */}
           <div className="col-span-2">
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center">
-                <span className="text-white font-bold text-lg">R</span>
-              </div>
-              <span className="text-xl font-bold text-white">Ribble UI</span>
+            <div className="mb-4">
+              <KansoUILogo showText className="h-10" width={180} />
             </div>
             <p className="text-gray-400 mb-6 max-w-xs">
               A modern, framework-agnostic UI component library for building beautiful, accessible interfaces.
@@ -161,7 +159,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <p className="text-gray-400 text-sm flex items-center space-x-1">
-            <span>© 2024 Ribble UI. Made with</span>
+            <span>© 2024 KansoUI. Made with</span>
             <Heart className="w-4 h-4 text-red-500 fill-red-500" />
             <span>by developers, for developers.</span>
           </p>
