@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import KansoUILogo from './KansoUILogo';
 
 interface SidebarProps {
   isOpen: boolean;
@@ -9,7 +10,14 @@ export default function Sidebar({ isOpen, onToggle }: SidebarProps) {
   return (
     <div className={`sidebar ${isOpen ? '' : 'closed'}`}>
       <div className="sidebar-header">
-        <div className="sidebar-logo">Admin Panel</div>
+        <div className="sidebar-logo">
+          <KansoUILogo
+            showText={isOpen}
+            iconOnly={!isOpen}
+            size="sm"
+            className="text-white"
+          />
+        </div>
       </div>
 
       <nav className="sidebar-nav">
