@@ -13,10 +13,11 @@ import Footer from './sections/Footer';
 function App() {
   const [darkMode, setDarkMode] = useState(() => {
     if (typeof window !== 'undefined') {
-      return localStorage.getItem('darkMode') === 'true' ||
-             (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      const stored = localStorage.getItem('darkMode');
+      // Default to dark mode if no preference is stored
+      return stored === null ? true : stored === 'true';
     }
-    return false;
+    return true;
   });
 
   useEffect(() => {

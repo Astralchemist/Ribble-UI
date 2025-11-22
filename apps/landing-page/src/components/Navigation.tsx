@@ -39,7 +39,7 @@ const Navigation = ({ darkMode, setDarkMode }: NavigationProps) => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'glass-effect shadow-lg' : 'bg-transparent'
+        isScrolled ? 'bg-black/80 backdrop-blur-xl border-b border-gray-800' : 'bg-transparent'
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -51,10 +51,10 @@ const Navigation = ({ darkMode, setDarkMode }: NavigationProps) => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-600 to-accent-600 flex items-center justify-center">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center">
               <span className="text-white font-bold text-lg">R</span>
             </div>
-            <span className="text-xl font-bold gradient-text hidden sm:inline">
+            <span className="text-xl font-bold text-white hidden sm:inline">
               Ribble UI
             </span>
           </motion.a>
@@ -65,7 +65,7 @@ const Navigation = ({ darkMode, setDarkMode }: NavigationProps) => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200 font-medium"
+                className="text-gray-300 hover:text-white transition-colors duration-200 font-medium"
               >
                 {link.name}
               </a>
@@ -80,20 +80,20 @@ const Navigation = ({ darkMode, setDarkMode }: NavigationProps) => {
                 href="https://github.com/your-org/ribble-ui"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hidden sm:flex items-center space-x-2 px-3 py-1.5 rounded-lg border border-gray-300 dark:border-gray-700 hover:border-primary-500 dark:hover:border-primary-500 transition-colors duration-200"
+                className="hidden sm:flex items-center space-x-2 px-3 py-1.5 rounded-lg border border-gray-700 hover:border-gray-500 transition-colors duration-200 bg-gray-900/50"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Github className="w-4 h-4" />
+                <Github className="w-4 h-4 text-gray-300" />
                 <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                <span className="text-sm font-semibold">{stars}</span>
+                <span className="text-sm font-semibold text-gray-300">{stars}</span>
               </motion.a>
             )}
 
             {/* Dark Mode Toggle */}
             <motion.button
               onClick={() => setDarkMode(!darkMode)}
-              className="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors duration-200"
+              className="p-2 rounded-lg hover:bg-gray-800 transition-colors duration-200"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               aria-label="Toggle dark mode"
@@ -101,20 +101,20 @@ const Navigation = ({ darkMode, setDarkMode }: NavigationProps) => {
               {darkMode ? (
                 <Sun className="w-5 h-5 text-yellow-500" />
               ) : (
-                <Moon className="w-5 h-5 text-gray-700" />
+                <Moon className="w-5 h-5 text-gray-300" />
               )}
             </motion.button>
 
             {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors duration-200"
+              className="md:hidden p-2 rounded-lg hover:bg-gray-800 transition-colors duration-200"
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? (
-                <X className="w-6 h-6" />
+                <X className="w-6 h-6 text-gray-300" />
               ) : (
-                <Menu className="w-6 h-6" />
+                <Menu className="w-6 h-6 text-gray-300" />
               )}
             </button>
           </div>
@@ -128,7 +128,7 @@ const Navigation = ({ darkMode, setDarkMode }: NavigationProps) => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden glass-effect border-t border-gray-200 dark:border-gray-800"
+            className="md:hidden bg-black/90 backdrop-blur-xl border-t border-gray-800"
           >
             <div className="container mx-auto px-4 py-4 space-y-3">
               {navLinks.map((link) => (
@@ -136,7 +136,7 @@ const Navigation = ({ darkMode, setDarkMode }: NavigationProps) => {
                   key={link.name}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200 font-medium"
+                  className="block py-2 text-gray-300 hover:text-white transition-colors duration-200 font-medium"
                 >
                   {link.name}
                 </a>
@@ -145,7 +145,7 @@ const Navigation = ({ darkMode, setDarkMode }: NavigationProps) => {
                 href="https://github.com/your-org/ribble-ui"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center space-x-2 py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200 font-medium"
+                className="flex items-center space-x-2 py-2 text-gray-300 hover:text-white transition-colors duration-200 font-medium"
               >
                 <Github className="w-5 h-5" />
                 <span>GitHub</span>

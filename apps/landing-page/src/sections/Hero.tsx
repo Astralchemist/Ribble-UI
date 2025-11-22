@@ -1,165 +1,191 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Code2, Sparkles } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      {/* Animated Gradient Background */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-100 via-accent-100 to-primary-100 dark:from-gray-900 dark:via-accent-950 dark:to-gray-900 animate-gradient" />
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-black">
+      {/* Subtle Grid Background */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-10" />
 
-        {/* Floating Orbs */}
-        <motion.div
-          className="absolute top-1/4 left-1/4 w-72 h-72 bg-primary-400/30 rounded-full blur-3xl"
-          animate={{
-            x: [0, 100, 0],
-            y: [0, -100, 0],
-            scale: [1, 1.2, 1],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-        <motion.div
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent-400/30 rounded-full blur-3xl"
-          animate={{
-            x: [0, -100, 0],
-            y: [0, 100, 0],
-            scale: [1, 1.3, 1],
-          }}
-          transition={{
-            duration: 25,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-        <motion.div
-          className="absolute top-1/2 left-1/2 w-64 h-64 bg-primary-600/20 rounded-full blur-3xl"
-          animate={{
-            x: [0, -150, 0],
-            y: [0, -150, 0],
-            scale: [1, 1.4, 1],
-          }}
-          transition={{
-            duration: 30,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-      </div>
+      {/* Subtle Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-black" />
+
+      {/* Floating Orbs - More Subtle */}
+      <motion.div
+        className="absolute top-1/4 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"
+        animate={{
+          x: [0, 50, 0],
+          y: [0, -50, 0],
+          scale: [1, 1.1, 1],
+        }}
+        transition={{
+          duration: 25,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
+      <motion.div
+        className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"
+        animate={{
+          x: [0, -50, 0],
+          y: [0, 50, 0],
+          scale: [1, 1.2, 1],
+        }}
+        transition={{
+          duration: 30,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="max-w-5xl mx-auto text-center">
-          {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center space-x-2 px-4 py-2 rounded-full glass-effect mb-8"
-          >
-            <Sparkles className="w-4 h-4 text-accent-600 dark:text-accent-400" />
-            <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">
-              Now supporting all major frameworks
-            </span>
-          </motion.div>
-
-          {/* Main Heading */}
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight"
-          >
-            Build Beautiful UIs
-            <br />
-            <span className="gradient-text">Framework Agnostic</span>
-          </motion.h1>
-
-          {/* Description */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xl sm:text-2xl text-gray-600 dark:text-gray-400 mb-12 max-w-3xl mx-auto text-balance"
-          >
-            A modern component library that works seamlessly with React, Vue, Svelte, Angular, and plain HTML.
-            One codebase, infinite possibilities.
-          </motion.p>
-
-          {/* CTA Buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
-          >
-            <a
-              href="#docs"
-              className="btn-primary group flex items-center space-x-2"
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-screen py-20">
+            {/* Left Side - Main Content */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="space-y-8"
             >
-              <span>Get Started</span>
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </a>
-            <a
-              href="#demo"
-              className="btn-secondary flex items-center space-x-2"
-            >
-              <Code2 className="w-5 h-5" />
-              <span>View Demo</span>
-            </a>
-          </motion.div>
-
-          {/* Stats */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto"
-          >
-            {[
-              { label: 'Components', value: '50+' },
-              { label: 'Frameworks', value: '5' },
-              { label: 'Bundle Size', value: '<10KB' },
-              { label: 'Performance', value: '100/100' },
-            ].map((stat, index) => (
+              {/* Small Badge */}
               <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
-                className="glass-effect rounded-xl p-6 hover:scale-105 transition-transform duration-300"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="inline-block"
               >
-                <div className="text-3xl sm:text-4xl font-bold gradient-text mb-2">
-                  {stat.value}
-                </div>
-                <div className="text-sm text-gray-600 dark:text-gray-400 font-medium">
-                  {stat.label}
+                <span className="text-sm text-gray-400 border border-gray-800 rounded-full px-4 py-2">
+                  Introducing Ribble UI
+                </span>
+              </motion.div>
+
+              {/* Main Heading - Extra Large */}
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold leading-none text-white"
+              >
+                Make your
+                <br />
+                websites look
+                <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">
+                  10x beautiful
+                </span>
+              </motion.h1>
+
+              {/* Subtitle */}
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="text-lg sm:text-xl text-gray-400 max-w-2xl"
+              >
+                Copy paste the most trending components and use them in your
+                websites without having to worry about styling and animations.
+              </motion.p>
+            </motion.div>
+
+            {/* Right Side - Feature Cards & Avatars */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="space-y-8"
+            >
+              {/* Avatar Showcase */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="flex justify-center lg:justify-end mb-12"
+              >
+                <div className="flex -space-x-4">
+                  {[
+                    'https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=100&h=100&fit=crop',
+                    'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop',
+                    'https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=100&h=100&fit=crop',
+                    'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=100&h=100&fit=crop',
+                    'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&h=100&fit=crop',
+                    'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop',
+                  ].map((src, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, scale: 0 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.3, delay: 0.7 + index * 0.1 }}
+                      className="relative"
+                    >
+                      <img
+                        src={src}
+                        alt={`User ${index + 1}`}
+                        className="w-14 h-14 rounded-full border-4 border-black object-cover hover:scale-110 transition-transform duration-300 cursor-pointer"
+                      />
+                    </motion.div>
+                  ))}
                 </div>
               </motion.div>
-            ))}
-          </motion.div>
 
-          {/* Scroll Indicator */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 1 }}
-            className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-          >
-            <motion.div
-              animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
-              className="w-6 h-10 rounded-full border-2 border-gray-400 dark:border-gray-600 flex items-start justify-center p-2"
-            >
+              {/* Feature Card */}
               <motion.div
-                animate={{ y: [0, 12, 0] }}
-                transition={{ duration: 2, repeat: Infinity }}
-                className="w-1.5 h-1.5 bg-gray-400 dark:bg-gray-600 rounded-full"
-              />
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+                className="relative group"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-300" />
+                <div className="relative bg-gradient-to-br from-gray-900/90 to-gray-800/90 backdrop-blur-xl border border-gray-700/50 rounded-3xl p-8 hover:border-gray-600/50 transition-all duration-300">
+                  {/* Animated Dots */}
+                  <div className="absolute top-6 right-6 flex space-x-8">
+                    {[...Array(3)].map((_, i) => (
+                      <motion.div
+                        key={i}
+                        animate={{
+                          scale: [1, 1.2, 1],
+                          opacity: [0.3, 0.6, 0.3],
+                        }}
+                        transition={{
+                          duration: 2,
+                          repeat: Infinity,
+                          delay: i * 0.3,
+                        }}
+                        className="w-2 h-2 bg-white rounded-full"
+                      />
+                    ))}
+                  </div>
+
+                  <h3 className="text-3xl font-bold text-white mb-4">
+                    Beautify your website within minutes
+                  </h3>
+                  <p className="text-gray-400 text-lg leading-relaxed">
+                    With Ribble UI, you can build great looking websites within minutes.
+                  </p>
+
+                  {/* Decorative Elements */}
+                  <div className="mt-8 flex items-center space-x-4">
+                    <div className="flex-1 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-transparent rounded-full" />
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Additional Small Card */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 1 }}
+                className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-xl border border-gray-700/50 rounded-2xl p-6"
+              >
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-sm text-gray-400 mb-1">Built for developers</p>
+                    <p className="text-2xl font-bold text-white">Framework Agnostic</p>
+                  </div>
+                  <div className="text-4xl">⚡</div>
+                </div>
+              </motion.div>
             </motion.div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
