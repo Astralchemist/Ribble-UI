@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Moon, Sun, Menu, X, Github, Star } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import KansoUILogo from './KansoUILogo';
@@ -12,6 +13,7 @@ const Navigation = ({ darkMode, setDarkMode }: NavigationProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [stars, setStars] = useState<number | null>(null);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,11 +30,12 @@ const Navigation = ({ darkMode, setDarkMode }: NavigationProps) => {
   }, []);
 
   const navLinks = [
-    { name: 'Features', href: '#features' },
-    { name: 'Demo', href: '#demo' },
-    { name: 'Performance', href: '#performance' },
-    { name: 'Templates', href: '#templates' },
-    { name: 'Docs', href: '#docs' },
+    { name: 'Home', href: '/', type: 'route' },
+    { name: 'Theme Builder', href: '/theme-builder', type: 'route' },
+    { name: 'Playground', href: '/playground', type: 'route' },
+    { name: 'Admin Demo', href: '/admin', type: 'route' },
+    { name: 'Analytics Demo', href: '/analytics', type: 'route' },
+    { name: 'SaaS Demo', href: '/saas', type: 'route' },
   ];
 
   return (
@@ -46,26 +49,25 @@ const Navigation = ({ darkMode, setDarkMode }: NavigationProps) => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <motion.a
-            href="#"
-            className="flex items-center"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <KansoUILogo showText={false} iconOnly className="w-10 h-10 sm:hidden" />
-            <KansoUILogo showText className="hidden sm:block h-10" width={180} />
-          </motion.a>
+          <Link to="/" className="flex items-center">
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <KansoUILogo showText={false} iconOnly className="w-10 h-10 sm:hidden" />
+              <KansoUILogo showText className="hidden sm:block h-10" width={180} />
+            </motion.div>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
-                href={link.href}
-                className="text-gray-300 hover:text-white transition-colors duration-200 font-medium"
+                to={link.href}
+                className={`text-gray-300 hover:text-white transition-colors duration-200 font-medium ${
+                  location.pathname === link.href ? 'text-white border-b-2 border-blue-500' : ''
+                }`}
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -129,14 +131,16 @@ const Navigation = ({ darkMode, setDarkMode }: NavigationProps) => {
           >
             <div className="container mx-auto px-4 py-4 space-y-3">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.name}
-                  href={link.href}
+                  to={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block py-2 text-gray-300 hover:text-white transition-colors duration-200 font-medium"
+                  className={`block py-2 text-gray-300 hover:text-white transition-colors duration-200 font-medium ${
+                    location.pathname === link.href ? 'text-white' : ''
+                  }`}
                 >
                   {link.name}
-                </a>
+                </Link>
               ))}
               <a
                 href="https://github.com/your-org/ribble-ui"
