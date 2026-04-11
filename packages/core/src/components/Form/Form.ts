@@ -77,9 +77,33 @@ export class Form extends UIComponent {
 
   connectedCallback() {
     super.connectedCallback();
+    // Seed validationSchema from the attribute if it was set via setAttribute
+    // before connect. The setter path only runs via `form.schema = value`.
+    const initialSchema = this.getAttribute('schema');
+    if (initialSchema) {
+      try {
+        this.validationSchema = JSON.parse(initialSchema);
+      } catch (e) {
+        console.error('Invalid schema JSON:', e);
+      }
+    }
     this.render();
     this.setupFormListeners();
     this.discoverFields();
+  }
+
+  // Wire attribute→setter so `setAttribute('schema', ...)` keeps
+  // `validationSchema` in sync post-connect. The base UIComponent's
+  // _reflectToProperty is a no-op here because Form doesn't use
+  // @property decorators.
+  protected _onAttributeChange(name: string, _oldValue: any, newValue: any) {
+    if (name === 'schema' && newValue !== null) {
+      try {
+        this.validationSchema = JSON.parse(newValue);
+      } catch (e) {
+        console.error('Invalid schema JSON:', e);
+      }
+    }
   }
 
   private render() {
@@ -226,6 +250,10 @@ export class Form extends UIComponent {
   private validateField(fieldName: string): boolean {
     const field = this.fields.get(fieldName);
     if (!field) return true;
+
+    // Refresh value from live DOM so validation sees post-mount changes,
+    // not the snapshot taken at discoverFields() time.
+    field.value = this.getFieldValue(field.element);
 
     const rules = this.validationSchema[fieldName];
     if (!rules) {

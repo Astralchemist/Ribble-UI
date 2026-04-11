@@ -1,13 +1,15 @@
 import { expect, afterEach, vi } from 'vitest';
-import { cleanup } from '@testing-library/dom';
 import * as matchers from '@testing-library/jest-dom/matchers';
 
 // Extend Vitest's expect with Testing Library matchers
 expect.extend(matchers);
 
-// Cleanup after each test
+// Cleanup after each test: remove any nodes that renderWebComponent attached
+// to document.body. @testing-library/dom has no `cleanup` export — that
+// belongs to the framework adapters (@testing-library/react, etc.) which we
+// don't use here since we're testing custom elements directly.
 afterEach(() => {
-  cleanup();
+  document.body.innerHTML = '';
 });
 
 // Mock window.matchMedia

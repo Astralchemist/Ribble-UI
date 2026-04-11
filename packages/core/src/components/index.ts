@@ -2,7 +2,7 @@
 export * from './UIComponent';
 
 // Existing Components
-export * from './MyButton';
+export * from './Button';
 export * from './TodoList';
 export * from './TodoItem';
 

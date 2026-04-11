@@ -19,19 +19,38 @@ export abstract class UIComponent extends HTMLElement {
   protected _props: Record<string, any> = {};
   protected _slots: Record<string, Node[]> = {};
   protected _isConnected = false;
+  // Pending aria/tabIndex applied on connect. The HTML spec (and jsdom)
+  // forbid a custom-element constructor from mutating `this`'s attributes
+  // or children — doing so throws `NotSupportedError: Unexpected
+  // attributes`. We stash these options at construction time and apply
+  // them during `connectedCallback`.
+  private _pendingAria?: Record<string, string>;
+  private _pendingTabIndex?: number;
 
   constructor(options: UIComponentOptions = {}) {
     super();
     this._shadow = this.attachShadow({ mode: 'open', ...options.shadow });
     this._initProps();
     this._initSlots();
-    this._initAria(options.aria);
-    if (options.tabIndex !== undefined) this.tabIndex = options.tabIndex;
+    this._pendingAria = options.aria;
+    this._pendingTabIndex = options.tabIndex;
   }
 
   // Lifecycle
   connectedCallback() {
     this._isConnected = true;
+    // Apply deferred aria attributes now that we're attached.
+    if (this._pendingAria) {
+      this._initAria(this._pendingAria);
+      this._pendingAria = undefined;
+    }
+    if (this._pendingTabIndex !== undefined) {
+      this.tabIndex = this._pendingTabIndex;
+      this._pendingTabIndex = undefined;
+    }
+    // Flush any property defaults that were set during class-field
+    // initialization (before connect) to their attribute representation.
+    this._flushPropsToAttributes();
     this._render();
     this._afterRender();
   }
@@ -42,16 +61,28 @@ export abstract class UIComponent extends HTMLElement {
   }
 
   attributeChangedCallback(name: string, oldValue: any, newValue: any) {
-    this._onAttributeChange(name, oldValue, newValue);
+    // Reflect attribute → property first with type-coerced value, then let
+    // the subclass hook in for custom side-effects. Doing it the other way
+    // around would have `_reflectToProperty` clobber anything the subclass
+    // wrote in `_onAttributeChange`.
     this._reflectToProperty(name, newValue);
-    this._render();
+    this._onAttributeChange(name, oldValue, newValue);
+    if (this._isConnected) this._render();
   }
 
-  // Property reflection
+  // Property reflection: write `value` (an attribute string or null) into
+  // the `_props` bag coerced to the declared property type. Updates via
+  // `_props[...]` directly to avoid re-entering `setAttribute` through
+  // the property setter.
   protected _reflectToProperty(attr: string, value: any) {
     const prop = (this.constructor as typeof UIComponent).properties[attr];
-    if (prop) {
-      this._props[attr] = value;
+    if (!prop) return;
+    if (prop.type === Boolean) {
+      this._props[attr] = value !== null;
+    } else if (prop.type === Number) {
+      this._props[attr] = value === null ? 0 : Number(value);
+    } else {
+      this._props[attr] = value ?? '';
     }
   }
 
@@ -65,13 +96,42 @@ export abstract class UIComponent extends HTMLElement {
         },
         set: function (val) {
           this._props[key] = val;
-          this.setAttribute(key, val);
-          this._render();
+          // Only touch the DOM once the element is connected — the HTML
+          // spec forbids setAttribute during construction and class-field
+          // initialization (which runs between super() and the subclass
+          // constructor body) will otherwise throw in strict DOM
+          // implementations like jsdom.
+          if (this._isConnected) {
+            this._reflectPropToAttribute(key, val);
+            this._render();
+          }
         },
         configurable: true,
         enumerable: true,
       });
     }
+  }
+
+  // Sync any `_props` values populated before connect (e.g. class-field
+  // defaults, or explicit assignments from a renderer) to the element's
+  // attribute list, using attribute-appropriate coercion.
+  private _flushPropsToAttributes() {
+    for (const key in this._props) {
+      this._reflectPropToAttribute(key, this._props[key]);
+    }
+  }
+
+  private _reflectPropToAttribute(key: string, val: unknown) {
+    if (val === false || val === null || val === undefined || val === '') {
+      if (this.hasAttribute(key)) this.removeAttribute(key);
+      return;
+    }
+    if (val === true) {
+      if (!this.hasAttribute(key)) this.setAttribute(key, '');
+      return;
+    }
+    const str = String(val);
+    if (this.getAttribute(key) !== str) this.setAttribute(key, str);
   }
 
   // Slot system (advanced: named slots and fallback content)
