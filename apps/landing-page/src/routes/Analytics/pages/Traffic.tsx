@@ -5,13 +5,13 @@ import FilterPanel, { Filter } from '../components/common/FilterPanel';
 import PieChart from '../components/charts/PieChart';
 import BarChart from '../components/charts/BarChart';
 import LineChart from '../components/charts/LineChart';
-import { DateRange, TrafficSource } from '../types';
+import { DateRange } from '../types';
 import { mockTrafficSources, generateTimeSeriesData, mockBrowserBreakdown } from '../utils/mockData';
 import { formatNumber, formatPercentage, formatDuration } from '../utils/helpers';
 import './pages.css';
 
 const Traffic: React.FC = () => {
-  const [dateRange, setDateRange] = useState<DateRange>({
+  const [, setDateRange] = useState<DateRange>({
     startDate: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000),
     endDate: new Date(),
   });

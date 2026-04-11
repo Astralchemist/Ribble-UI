@@ -50,9 +50,8 @@ function generateSVGIcon(size) {
 console.log('Generating PWA icons...');
 sizes.forEach((size) => {
   const svg = generateSVGIcon(size);
-  const filename = `icon-${size}x${size}.png`;
-
-  // For now, we'll create SVG files. In production, convert to PNG using a tool like sharp
+  // NOTE: In production we'll convert these to PNG (icon-<size>x<size>.png)
+  // using a tool like sharp. For now we ship the SVGs directly.
   const svgFilename = `icon-${size}x${size}.svg`;
   fs.writeFileSync(path.join(iconsDir, svgFilename), svg);
   console.log(`✓ Created ${svgFilename}`);

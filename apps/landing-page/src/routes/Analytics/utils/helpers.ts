@@ -1,4 +1,4 @@
-import { TimeSeriesData, ChartDataPoint, ExportFormat } from '../types';
+import { ExportFormat } from '../types';
 
 /**
  * Format a number with commas for thousands

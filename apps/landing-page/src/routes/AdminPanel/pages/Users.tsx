@@ -38,7 +38,8 @@ const initialUsers: User[] = [
 
 export default function Users() {
   const [users, setUsers] = useState<User[]>(initialUsers);
-  const [selectedUsers, setSelectedUsers] = useState<User[]>([]);
+  // Bulk-action consumers not yet implemented; setter is still wired up.
+  const [, setSelectedUsers] = useState<User[]>([]);
   const [modalOpen, setModalOpen] = useState(false);
   const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
   const [editingUser, setEditingUser] = useState<User | null>(null);

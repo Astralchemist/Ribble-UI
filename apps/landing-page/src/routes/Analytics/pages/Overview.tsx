@@ -16,7 +16,7 @@ import {
 import './pages.css';
 
 const Overview: React.FC = () => {
-  const [dateRange, setDateRange] = useState<DateRange>({
+  const [, setDateRange] = useState<DateRange>({
     startDate: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000),
     endDate: new Date(),
   });

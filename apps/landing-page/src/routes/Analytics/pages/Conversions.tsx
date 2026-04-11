@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import DateRangePicker from '../components/common/DateRangePicker';
 import ExportButton from '../components/common/ExportButton';
 import LineChart from '../components/charts/LineChart';
-import { DateRange, ConversionFunnelStep } from '../types';
+import { DateRange } from '../types';
 import { mockConversionFunnel, generateTimeSeriesData } from '../utils/mockData';
 import { formatNumber, formatPercentage } from '../utils/helpers';
 import './pages.css';
 
 const Conversions: React.FC = () => {
-  const [dateRange, setDateRange] = useState<DateRange>({
+  // Date range filter UI is wired up but no chart currently reads the value.
+  const [, setDateRange] = useState<DateRange>({
     startDate: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000),
     endDate: new Date(),
   });
