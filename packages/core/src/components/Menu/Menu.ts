@@ -1,4 +1,4 @@
-import { UIComponent } from '../base/UIComponent';
+import { UIComponent } from '../UIComponent';
 
 export type MenuPlacement =
   | 'top'
@@ -439,7 +439,7 @@ export class MenuItem extends UIComponent {
     const item = this.shadowRoot!.querySelector('.menu-item');
     item?.addEventListener('click', () => {
       if (!this.disabled) {
-        this.emit('menu-item-click', { value: this.value }, true);
+        this.emit('menu-item-click', { value: this.value });
       }
     });
   }

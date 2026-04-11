@@ -6,7 +6,7 @@ interface SidebarProps {
   onToggle: () => void;
 }
 
-export default function Sidebar({ isOpen, onToggle }: SidebarProps) {
+export default function Sidebar({ isOpen }: SidebarProps) {
   return (
     <div className={`sidebar ${isOpen ? '' : 'closed'}`}>
       <div className="sidebar-header">

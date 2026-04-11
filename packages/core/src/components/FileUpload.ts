@@ -307,7 +307,7 @@ export class FileUpload extends UIComponent {
         />
         ${this.files.length > 0 ? `
           <div class="file-list" part="list">
-            ${this.files.map((file, index) => `
+            ${this.files.map((file) => `
               <div class="file-item" part="item">
                 <div class="file-info">
                   <svg class="file-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">

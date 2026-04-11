@@ -14,7 +14,6 @@ export class Barcode extends UIComponent {
 
   protected _render() {
     // Simple barcode visualization (real implementation would use a barcode library)
-    const bars = this.value.split('').map((_, i) => (i % 2 === 0 ? 10 : 5)).join(',');
     this._shadow.innerHTML = `<style>${style}</style>
       <div class="barcode" part="barcode">
         <svg width="${this.width}" height="${this.height}" part="svg">

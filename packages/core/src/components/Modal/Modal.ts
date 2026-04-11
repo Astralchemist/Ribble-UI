@@ -1,5 +1,5 @@
-import { UIComponent } from './UIComponent';
-import { property } from '../types';
+import { UIComponent } from '../UIComponent';
+import { property } from '../../types';
 
 const style = `
 :host {
@@ -111,7 +111,7 @@ const style = `
 `;
 
 export class Modal extends UIComponent {
-  static is = 'ui-modal';
+  static is = 'ribble-modal';
 
   @property({ type: Boolean, reflect: true })
   open = false;

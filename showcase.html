@@ -155,37 +155,37 @@
         <div class="demo-grid">
           <div class="demo-item">
             <span class="demo-label">Default Input</span>
-            <ui-input
+            <ribble-input
               label="Username"
               placeholder="Enter your username"
               helper="Choose a unique username">
-            </ui-input>
+            </ribble-input>
           </div>
           <div class="demo-item">
             <span class="demo-label">Email Input</span>
-            <ui-input
+            <ribble-input
               type="email"
               label="Email"
               placeholder="user@example.com"
               required>
-            </ui-input>
+            </ribble-input>
           </div>
           <div class="demo-item">
             <span class="demo-label">Password Input</span>
-            <ui-input
+            <ribble-input
               type="password"
               label="Password"
               placeholder="••••••••"
               required>
-            </ui-input>
+            </ribble-input>
           </div>
           <div class="demo-item">
             <span class="demo-label">With Error</span>
-            <ui-input
+            <ribble-input
               label="Username"
               value="ab"
               error="Username must be at least 3 characters">
-            </ui-input>
+            </ribble-input>
           </div>
         </div>
       </div>
@@ -343,14 +343,14 @@
         <button onclick="document.getElementById('demo-modal').show()" style="padding: 0.75rem 1.5rem; background: #007bff; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 1rem;">
           Open Modal
         </button>
-        <ui-modal id="demo-modal" title="Example Modal" size="medium">
+        <ribble-modal id="demo-modal" title="Example Modal" size="medium">
           <p>This is a modal dialog. It can contain any content you want!</p>
           <p style="margin-top: 1rem;">Click outside the modal or press the close button to dismiss it.</p>
           <div slot="footer">
             <button onclick="document.getElementById('demo-modal').close()" style="padding: 0.5rem 1rem; background: #6c757d; color: white; border: none; border-radius: 4px; cursor: pointer; margin-right: 0.5rem;">Cancel</button>
             <button onclick="alert('Confirmed!'); document.getElementById('demo-modal').close()" style="padding: 0.5rem 1rem; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer;">Confirm</button>
           </div>
-        </ui-modal>
+        </ribble-modal>
       </div>
     </section>
 

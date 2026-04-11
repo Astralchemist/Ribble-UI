@@ -2,7 +2,7 @@
 export * from './UIComponent';
 
 // Existing Components
-export * from './MyButton';
+export * from './Button';
 export * from './TodoList';
 export * from './TodoItem';
 
@@ -120,7 +120,6 @@ export * from './Portal';
 export * from './Transition';
 export * from './Collapse';
 export * from './Reveal';
-export * from './Parallax';
 export * from './Sticky';
 export * from './Anchor';
 export * from './Responsive';

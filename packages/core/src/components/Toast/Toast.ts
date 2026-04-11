@@ -1,4 +1,4 @@
-import { UIComponent } from '../base/UIComponent';
+import { UIComponent } from '../UIComponent';
 
 export type ToastType = 'info' | 'success' | 'warning' | 'error';
 export type ToastPosition =

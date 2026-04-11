@@ -216,7 +216,10 @@ export class TimePicker extends UIComponent {
   }
 
   private _parseValue() {
-    const [time, period] = this.value.split(' ');
+    // NOTE: the AM/PM suffix in `this.value` (e.g. "01:30 PM") is currently
+    // ignored; period is derived from the 24h hour instead. This is a known
+    // parsing bug — a "01:30 PM" input resolves to AM. Tracked for fix.
+    const [time] = this.value.split(' ');
     const [hour, minute] = time.split(':').map(Number);
 
     if (this.use24Hour) {

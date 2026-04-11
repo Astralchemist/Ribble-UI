@@ -1,5 +1,5 @@
-import { UIComponent } from './UIComponent';
-import { property } from '../types';
+import { UIComponent } from '../UIComponent';
+import { property } from '../../types';
 
 const style = `
 :host {
@@ -124,7 +124,7 @@ const style = `
 `;
 
 export class Input extends UIComponent {
-  static is = 'ui-input';
+  static is = 'ribble-input';
 
   @property({ type: String, reflect: true })
   type = 'text';
@@ -175,29 +175,34 @@ export class Input extends UIComponent {
     });
   }
 
+  // Stable per-instance id for label ↔ input association. Generated once.
+  private _inputId = `ribble-input-${Math.random().toString(36).slice(2, 10)}`;
+
   protected _render() {
     const hasLabel = this.label.length > 0;
     const hasError = this.error.length > 0;
     const hasHelper = this.helper.length > 0;
+    const inputId = this._inputId;
 
     this._shadow.innerHTML = `
       <style>${style}</style>
       <div class="input-wrapper" part="wrapper">
         ${hasLabel ? `
-          <label class="input-label ${this.required ? 'required' : ''}" part="label">
+          <label class="input-label ${this.required ? 'required' : ''}" for="${inputId}" part="label">
             ${this.label}
           </label>
         ` : ''}
 
         <div class="input-container" part="container">
           <input
+            id="${inputId}"
             type="${this.type}"
             class="input-field ${hasError ? 'error' : ''}"
             placeholder="${this.placeholder}"
             name="${this.name}"
             value="${this.value}"
             ${this.disabled ? 'disabled' : ''}
-            ${this.required ? 'required' : ''}
+            ${this.required ? 'required aria-required="true"' : ''}
             ${this.readonly ? 'readonly' : ''}
             ${this.pattern ? `pattern="${this.pattern}"` : ''}
             ${this.minlength > 0 ? `minlength="${this.minlength}"` : ''}

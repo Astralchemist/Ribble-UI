@@ -188,7 +188,7 @@ export class ComponentRegistry {
     }
 
     await loader();
-    this.loaded.set(name);
+    this.loaded.add(name);
   }
 
   async loadAll(): Promise<void> {

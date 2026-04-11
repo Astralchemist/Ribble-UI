@@ -53,7 +53,9 @@ export default function Products() {
   const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
   const [editingProduct, setEditingProduct] = useState<Product | null>(null);
   const [productToDelete, setProductToDelete] = useState<Product | null>(null);
-  const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
+  // NOTE: uploaded files are captured via setUploadedFiles but no read
+  // consumers exist yet; the state slot is kept for the upcoming feature.
+  const [, setUploadedFiles] = useState<File[]>([]);
 
   const formFields: FormField[] = [
     {

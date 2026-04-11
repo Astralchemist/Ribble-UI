@@ -1,4 +1,5 @@
-import { UIComponent, property } from './UIComponent';
+import { UIComponent } from './UIComponent';
+import { property } from '../types';
 
 export class ThemeToggler extends UIComponent {
   static is = 'theme-toggler';
@@ -117,20 +118,6 @@ export class ThemeToggler extends UIComponent {
 
   render() {
     if (!this.shadowRoot) return;
-
-    const sizeClasses = {
-      sm: 'h-5 w-10',
-      md: 'h-6 w-12',
-      lg: 'h-8 w-16'
-    };
-
-    const iconSize = {
-      sm: '12',
-      md: '16',
-      lg: '20'
-    };
-
-    const size = iconSize[this.size];
 
     this.shadowRoot.innerHTML = `
       <style>

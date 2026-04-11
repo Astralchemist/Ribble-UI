@@ -261,7 +261,7 @@ export class TagInput extends UIComponent {
       <style>${style}</style>
       <div class="tag-input-container" part="container">
         <div class="tags-wrapper ${this.error ? 'error' : ''}" part="wrapper">
-          ${this.tagList.map((tag, index) => `
+          ${this.tagList.map((tag) => `
             <div class="tag-chip" part="tag">
               <span class="tag-text">${tag}</span>
               <button

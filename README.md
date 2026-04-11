@@ -101,8 +101,8 @@ pnpm add @ribble-ui/angular
 ```
 
 ```ts
-import { MyButton } from '@ribble-ui/angular';
-// ... use <my-button label="Click me!"></my-button> in templates
+import { Button } from '@ribble-ui/angular';
+// ... use <ribble-button>Click me!</ribble-button> in templates
 ```
 
 ---
@@ -124,9 +124,9 @@ import { MyButton } from '@ribble-ui/angular';
 ## 🧩 Usage Examples
 
 ```tsx
-import { MyButton } from '@ribble-ui/core';
+import { Button } from '@ribble-ui/core';
 
-<MyButton label="Click me!" />;
+<ribble-button>Click me!</ribble-button>;
 ```
 
 Or with React:

@@ -1,4 +1,4 @@
-import { UIComponent } from '../base/UIComponent';
+import { UIComponent } from '../UIComponent';
 
 export type ChipVariant = 'filled' | 'outlined' | 'soft';
 export type ChipSize = 'small' | 'medium' | 'large';
