@@ -1,4 +1,4 @@
-import { UIComponent } from '../base/UIComponent';
+import { UIComponent } from '../UIComponent';
 
 export interface FormField {
   name: string;

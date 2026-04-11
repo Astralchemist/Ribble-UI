@@ -1,4 +1,5 @@
-import { UIComponent, property } from './UIComponent';
+import { UIComponent } from './UIComponent';
+import { property } from '../types';
 
 export class ThemeToggler extends UIComponent {
   static is = 'theme-toggler';

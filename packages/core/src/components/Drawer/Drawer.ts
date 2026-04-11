@@ -1,4 +1,4 @@
-import { UIComponent } from '../base/UIComponent';
+import { UIComponent } from '../UIComponent';
 
 export type DrawerPosition = 'left' | 'right' | 'top' | 'bottom';
 export type DrawerSize = 'small' | 'medium' | 'large' | 'full';

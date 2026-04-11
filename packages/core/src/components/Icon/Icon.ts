@@ -1,4 +1,4 @@
-import { UIComponent } from '../base/UIComponent';
+import { UIComponent } from '../UIComponent';
 import { icons, type IconName } from './icons';
 
 export type IconSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
